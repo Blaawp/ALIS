@@ -7,6 +7,10 @@ android {
     namespace 'com.example.alis_mobile'
     compileSdk 33
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.alis_mobile"
         minSdk 24
@@ -49,7 +53,7 @@ android {
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:<version>'
-    implementation 'androidx.constraintlayout:constraintlayout:<version>'
+    implementation 'androidx.constraintlayout:constraintlayout:<version>' // constraint layout
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.5.1'
@@ -66,6 +70,6 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    implementation 'com.google.android.material:material:1.4.0' // for bottom nav
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha09")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha09")
 }
