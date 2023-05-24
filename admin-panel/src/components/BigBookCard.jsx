@@ -1,4 +1,4 @@
-export default function BookCard({
+export default function BigBookCard({
     title,
     author,
     synopsis,
@@ -10,12 +10,12 @@ export default function BookCard({
     return (
         <div
             onClick={onClick}
-            className="flex flex-row rounded-md bg-white p-4 text-black"
+            className="flex flex-row items-center rounded-md bg-white p-4 text-black"
         >
             <img className="w-1/4 object-cover" src={img} alt=" " />
             <div className="ml-4 flex w-3/4 flex-col">
                 <div className="flex flex-row items-center justify-between">
-                    <p className="text-xl">{title}</p>
+                    <p className="text-2xl">{title}</p>
                     <p className="rounded-full bg-[#4c3feb] px-4 text-center align-middle text-white">
                         {genre}
                     </p>
@@ -23,7 +23,7 @@ export default function BookCard({
                 <p className="mb-2 text-sm">{author}</p>
                 <p className="mb-4">{synopsis}</p>
                 {!!status && (
-                    <div className="flex flex-row justify-between">
+                    <div className="mb-4 flex flex-row justify-between">
                         <p className="text-xl font-bold">Status:</p>
                         <p
                             className={`text-xl font-bold ${
@@ -36,6 +36,14 @@ export default function BookCard({
                         </p>
                     </div>
                 )}
+
+                <div className="flex w-full flex-row justify-end">
+                    <img
+                        className="w-10"
+                        src="/icons/inventory_down.svg"
+                        alt=" "
+                    />
+                </div>
             </div>
         </div>
     );
