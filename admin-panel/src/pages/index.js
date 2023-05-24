@@ -24,6 +24,13 @@ export default function Home() {
                         alt=" "
                         className="h-full w-full object-cover object-center"
                     ></img>
+                    <div class="absolute left-24 top-44 z-10 mb-3 flex flex-col space-y-2 px-2 text-white">
+                        <h4 class="mb-2 text-6xl font-semibold">
+                            BE FUTURE-READY
+                        </h4>
+                        <h4 class="mb-2 text-6xl font-semibold">BE STI</h4>
+                    </div>
+                    <div className="bg-black-overlay w-3/4"></div>
                 </div>
                 <div className="flex w-1/4 flex-col items-center justify-center bg-[#fff200] p-4 align-middle">
                     <img src="/logo/sti.svg" alt=" " className="mb-12 w-2/4" />
