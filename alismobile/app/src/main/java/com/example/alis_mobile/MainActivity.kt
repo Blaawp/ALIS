@@ -1,6 +1,7 @@
 package com.example.alis_mobile
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,6 +16,9 @@ import com.example.alis_mobile.ui.theme.AlismobileTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.login_screen)
+    }
+    fun switchDestinationRules(view: View) {
         setContentView(R.layout.rule_screen)
     }
 }
@@ -26,6 +30,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
