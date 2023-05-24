@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">alis-mobile</string>
     <string name="sti_services">The STI Library provides the following services for its readers.</string>
-    <string name="sti_services2" tools:ignore="StringEscaping">• Internet and Wi-Fi Service\n• Referral Service\n• Readers' Service\n• Visiting Researchers (for non-STI  students)</string>
+    <string name="sti_services2" tools:ignore="StringEscaping">• Internet and Wi-Fi Service\n• Referral Service\n• Readers\' Service\n• Visiting Researchers (for non-STI  students)</string>
     <string name="book_policies"> 1. All bonafide Faculty, Staff and Students of STI College of Caloocan can use and borrow books from the library.
         \n 2. The Library Card is a basic requirement for all circulation transactions at the library.
         \n 3. All library users must apply for a Library Card before they can borrow from the library.
