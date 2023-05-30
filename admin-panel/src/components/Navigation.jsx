@@ -61,6 +61,16 @@ export default function Navigation() {
                 >
                     Due Dates
                 </Link>
+                <Link
+                    href="/borrowing"
+                    className={`text-xl font-bold ${
+                        router.pathname === "/borrowing"
+                            ? "text-blue-500"
+                            : "text-black"
+                    }`}
+                >
+                    Borrowing
+                </Link>
             </div>
             <div className="flex w-2/12 flex-row items-center justify-evenly">
                 <FaUserCircle color="black" />

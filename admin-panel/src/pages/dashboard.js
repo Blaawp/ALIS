@@ -17,7 +17,7 @@ export default function dashboard() {
                 </div>
                 <div className="flex w-10/12 flex-col text-black">
                     <h1 className="text-2xl font-bold">Latest Borrowed:</h1>
-                    <div className="grid grid-cols-3 place-content-center">
+                    <div className="grid grid-cols-3 gap-y-3 place-content-center">
                         <div></div>
                         <div className="flex w-full flex-row items-center justify-center align-middle">
                             <p>Category</p>
