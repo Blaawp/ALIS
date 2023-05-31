@@ -16,4 +16,15 @@
         \n 9. Overdue fine is Php5.00 for each book, per day.
         \n 10. Lost library card and books must be reported to the Librarian as soon as possible.
         \n 11. Replacement fee for lost library card is Php50.00.</string>
+    <string name="library_rules"> 1. Silence should be observed inside the library at all times.
+        \n 2. A valid library card is required for all library transactions.
+        \n 3. All library users should log in the library\'s attendance upon entering and before leaving the library.
+        \n 4. Mobile phones and other electronic gadgets must be turned to silent mode. Phone calls must be answered outside the library.
+        \n 5. Wearing of proper uniform is required for all library users. Wearing of caps, bandannas, shades and earrings (for male students) are not allowed.
+        \n 6. Eating, smoking, grooming, running and sleeping are not allowed inside the library. Playing of video games and board games are not allowed inside the library.
+        \n 7. Laptops and electronic gadgets can be used inside the library. However, the library will not be liable for any losses.
+        \n 8. Charging of gadgets are not allowed in the library.
+        \n 9. Library furniture (i.e., tables, chairs, etc.) are not allowed to be relocated or transferred to another place.
+        \n 10. Public display of affection (PDA), discourtesy, disrespecting authority and any unethical actions will not be tolerated inside the library and is subject to appropriate disciplinary actions.
+</string>
 </resources>

@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RuleActivity"
+            android:label="Rule Activity"
+            android:theme="@style/Theme.Alismobile" />
+
     </application>
 
 </manifest>

@@ -1,12 +1,11 @@
 package com.example.alis_mobile
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.EditText
+import android.widget.Button
+import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,12 +13,41 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.alis_mobile.ui.theme.AlismobileTheme
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var usernameEditText: EditText
+    private lateinit var passwordEditText: EditText
+    private lateinit var loginButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
+
+        usernameEditText = findViewById(R.id.etUsername)
+        passwordEditText = findViewById(R.id.etPassword)
+        loginButton = findViewById(R.id.btnLogin)
+
+        loginButton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            placeholderLogin(username, password)
+        }
     }
-    fun switchDestinationRules(view: View) {
-        setContentView(R.layout.rule_screen)
+
+    private fun switchDestinationRules() {
+        val intent = Intent(this, RuleActivity::class.java)
+        startActivity(intent)
+    }
+    private fun placeholderLogin(username: String, password: String) {
+        val expectedUsername = "temp"
+        val expectedPassword = "password"
+
+        if (username == expectedUsername && password == expectedPassword) {
+            switchDestinationRules()
+        } else {
+            // Login failed
+            Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
@@ -30,8 +58,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
-
-
 
 @Preview(showBackground = true)
 @Composable
