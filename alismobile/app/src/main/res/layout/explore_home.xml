@@ -7,12 +7,12 @@
 
     <TextView
         android:id="@+id/featured_book_text"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="50dp"
         android:text="FEATURED BOOK"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_box" />
 
@@ -28,6 +28,7 @@
 
     <TextView
         android:id="@+id/categories_text"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
