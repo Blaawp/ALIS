@@ -15,23 +15,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import android.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.alis_mobile.ui.theme.AlismobileTheme
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class ProfileActivity : ComponentActivity() {
+class SearchActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.profile_screen)
+        setContentView(R.layout.searched_screen)
 
         val homeNav: ImageView = findViewById(R.id.homeNav)
         val compassNav: ImageView = findViewById(R.id.compassNav)
         val profNav: ImageView = findViewById(R.id.profNav)
-        val expCont: ImageView = findViewById(R.id.profileCard)
+        val bookCont: ConstraintLayout = findViewById(R.id.bookCard)
 
-        profNav.setColorFilter(Color.WHITE)
-
-        val groupedLayout: LinearLayout = findViewById(R.id.groupedLayout)
+        compassNav.setColorFilter(Color.WHITE)
 
         homeNav.setOnClickListener {
             // Handle homeNav click event
@@ -43,7 +42,7 @@ class ProfileActivity : ComponentActivity() {
         compassNav.setOnClickListener {
             // Handle compassNav click event
             // Example: Opening CompassActivity
-            val intent = Intent(this, ExploreActivity::class.java)
+            val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
 
@@ -53,16 +52,11 @@ class ProfileActivity : ComponentActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
-        expCont.setOnClickListener {
-            if (groupedLayout.visibility == View.VISIBLE) {
-                // Elements are currently visible, so hide them
-                groupedLayout.visibility = View.GONE
-            } else {
-                // Elements are currently hidden, so show them
-                groupedLayout.visibility = View.VISIBLE
-            }
+        bookCont.setOnClickListener {
+            // Handle profNav click event
+            // Example: Opening ProfileActivity
+            val intent = Intent(this, BookActivity::class.java)
+            startActivity(intent)
         }
-
     }
 }

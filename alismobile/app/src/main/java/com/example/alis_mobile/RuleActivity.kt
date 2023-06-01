@@ -2,6 +2,7 @@ package com.example.alis_mobile
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Button
@@ -26,6 +27,8 @@ class RuleActivity : ComponentActivity() {
         val compassNav: ImageView = findViewById(R.id.compassNav)
         val profNav: ImageView = findViewById(R.id.profNav)
 
+        homeNav.setColorFilter(Color.WHITE)
+
         homeNav.setOnClickListener {
             // Handle homeNav click event
             // Example: Opening HomeActivity
@@ -33,12 +36,12 @@ class RuleActivity : ComponentActivity() {
             startActivity(intent)
         }
 
-        /*compassNav.setOnClickListener {
+        compassNav.setOnClickListener {
             // Handle compassNav click event
             // Example: Opening CompassActivity
-            //val intent = Intent(this, CompassActivity::class.java)
-            //startActivity(intent)
-        }*/
+            val intent = Intent(this, ExploreActivity::class.java)
+            startActivity(intent)
+        }
 
         profNav.setOnClickListener {
             // Handle profNav click event
