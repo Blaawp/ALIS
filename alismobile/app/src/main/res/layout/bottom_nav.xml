@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/botNav"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:background="#1E89CF"
+    >
+
+    <ImageView
+        android:id="@+id/homeNav"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:src="@drawable/home"
+        android:padding="8dp"
+        android:clickable="true" />
+
+    <ImageView
+        android:id="@+id/compassNav"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:src="@drawable/compass"
+        android:padding="8dp"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/profNav"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:src="@drawable/profile_circle"
+        android:padding="8dp"
+        android:clickable="true"/>
+
+</LinearLayout>
