@@ -27,6 +27,10 @@
             android:name=".RuleActivity"
             android:label="Rule Activity"
             android:theme="@style/Theme.Alismobile" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Rule Activity"
+            android:theme="@style/Theme.Alismobile" />
 
     </application>
 
