@@ -42,13 +42,13 @@ export default function DueDateList({
                 <p className={`text-xl font-bold ${statusColor[status]}`}>{status}</p>
             </div>
 
-            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center bg-white align-middle`}>
+            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center align-middle`}>
                 <p className="text-xl font-bold">
                     {title}
                 </p>
             </div>
 
-            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center bg-white align-middle`}>
+            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center align-middle`}>
                 <p className="text-xl font-bold text-red-500">{due}</p>
             </div>
         </>

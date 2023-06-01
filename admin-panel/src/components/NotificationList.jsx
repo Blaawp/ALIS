@@ -37,7 +37,7 @@ export default function NotificationList({
                 <p className="text-xl font-bold">{id}</p>
             </div>
 
-            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center bg-white align-middle`}>
+            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center align-middle`}>
                 <p
                     className={`text-xl font-bold ${statusColor[status]}`}
                 >
@@ -45,7 +45,7 @@ export default function NotificationList({
                 </p>
             </div>
 
-            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center bg-white align-middle`}>
+            <div className={`${bgColor[status]} flex w-full flex-row items-center justify-center align-middle`}>
                 <p className="text-xl font-bold">{title}</p>
             </div>
         </>

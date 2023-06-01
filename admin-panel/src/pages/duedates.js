@@ -19,7 +19,7 @@ export default function duedates() {
                         </div>
 
                         <div className="flex w-full flex-row items-center justify-center align-middle">
-                            <p>Title of Books</p>
+                            <p>Title of Book</p>
                         </div>
 
                         <div className="flex w-full flex-row items-center justify-center align-middle">
