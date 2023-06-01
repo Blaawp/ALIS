@@ -1,0 +1,55 @@
+import Navigation from "@/components/Navigation";
+import { BsFillPlusSquareFill } from "react-icons/bs";
+import { books } from "@/data/books";
+import BookCard from "@/components/BookCard";
+import { useAtom, useAtomValue } from "jotai";
+import { inventorySelectedBookAtom } from "@/Store";
+import { useEffect } from "react";
+import SearchBar from "@/components/SearchBar";
+import BigBookCard from "@/components/BigBookCard";
+
+export default function inventory() {
+    const [selectedBook, setSelectedBook] = useAtom(inventorySelectedBookAtom);
+
+    useEffect(() => {
+        return () => {
+            setSelectedBook(null);
+        };
+    }, []);
+
+    if (!!selectedBook) {
+        return (
+            <>
+                <Navigation />
+                <div className="my-24 flex h-full w-full flex-col items-center justify-center space-y-12 align-middle">
+                    <SearchBar />
+                    <BigBookCard {...selectedBook} />
+                </div>
+            </>
+        );
+    }
+
+    return (
+        <>
+            <Navigation />
+            <div className="my-24 flex h-full w-full flex-col items-center justify-center space-y-12 align-middle">
+                <SearchBar />
+
+                <div className="grid w-10/12 grid-cols-3 gap-x-4 gap-y-5">
+                    {books.map((book) => (
+                        <BookCard
+                            {...book}
+                            onClick={() => {
+                                setSelectedBook(book);
+                            }}
+                        />
+                    ))}
+                </div>
+
+                <div className="flex w-10/12 flex-row justify-end">
+                    <BsFillPlusSquareFill color="black" size="50px" />
+                </div>
+            </div>
+        </>
+    );
+}
