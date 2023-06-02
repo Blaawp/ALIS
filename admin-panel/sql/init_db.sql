@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `books`(
 );
 
 CREATE TABLE IF NOT EXISTS `borrow_transactions`(
-    id INT,
+    id INT AUTO_INCREMENT,
     book_barcode INT NOT NULL,
     user_id INT NOT NULL,
     librarian_id INT NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `borrow_transactions`(
 );
 
 CREATE TABLE IF NOT EXISTS `fine_transactions`(
-    id INT,
+    id INT AUTO_INCREMENT,
     borrow_transaction_id INT,
     fine FLOAT,
     paid_amt FLOAT,
@@ -100,10 +100,10 @@ INSERT INTO book_categories (`category`) VALUES ("Thesis");
 INSERT INTO book_categories (`category`) VALUES ("References");
 INSERT INTO book_categories (`category`) VALUES ("Periodicals");
 
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Librarian", "L.", "1", "librarian1@sti.edu.ph", "", 0);
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Teacher", "T.", "1", "teacher1@sti.edu.ph", "", 1);
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("User", "U.", "1", "user1@sti.edu.ph", "", 2);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Librarian", "L.", "1", "librarian1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 0);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Teacher", "T.", "1", "teacher1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 1);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("User", "U.", "1", "user1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 2);
 
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("When Blood Meets Earth", "E.A. Noble", "Synompys kuno pero mema lang to kase wala akong maisip ilagay daming white space so dadamihan ko pa ang kamemahan kase dami pang white space", 0, 0);
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("LRT & MRT", "E.A. Noble", "Train Routes in PH", 1,2);
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("ALIS", "Tristan", "ALIS THESIS", 2, 1);
+INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("When Blood Meets Earth", "E.A. Noble", "Synompys kuno pero mema lang to kase wala akong maisip ilagay daming white space so dadamihan ko pa ang kamemahan kase dami pang white space", 1, 1);
+INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("LRT & MRT", "E.A. Noble", "Train Routes in PH", 2,2);
+INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("ALIS", "Tristan", "ALIS THESIS", 3, 3);

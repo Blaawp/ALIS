@@ -1,10 +1,10 @@
-import { findBook } from "@/utils/db";
+import { findUserRole } from "@/utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
-            const books = await findBook({});
-            res.status(200).json(books);
+            const categories = await findUserRole({});
+            res.status(200).json(categories);
             return;
         } catch (e) {
             console.error(e);
