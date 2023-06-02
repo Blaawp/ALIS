@@ -1,5 +1,5 @@
--- DROP DATABASE IF EXISTS `alis`;
--- CREATE DATABASE IF NOT EXISTS `alis`;
+DROP DATABASE IF EXISTS `alis`;
+CREATE DATABASE IF NOT EXISTS `alis`;
 
 USE `alis`;
 
@@ -34,12 +34,13 @@ CREATE TABLE IF NOT EXISTS `users`(
     first_name TEXT NOT NULL,
     middle_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
-    email TEXT NOT NULL,
+    email VARCHAR(100) NOT NULL,
     `password` TEXT NOT NULL,
     `role` INT NOT NULL,
     avatar_link TEXT DEFAULT "",
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    UNIQUE(email)
     -- FOREIGN KEY (`role`) REFERENCES roles(id)
 );
 
