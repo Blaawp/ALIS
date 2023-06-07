@@ -1,191 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:background="#F0EEEE">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/botNav">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="314dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="150dp"
+        android:background="#fafafa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/r_n_r_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="RULES AND REGULATION"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:id="@+id/line_one"
+            android:layout_width="300dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:background="#efe645"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/r_n_r_title" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="15dp">
+        <ImageView
+            android:id="@+id/library_image"
+            android:layout_width="140dp"
+            android:layout_height="129dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_one"
+            tools:srcCompat="@tools:sample/avatars" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/library_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/library_image"
+            app:layout_constraintTop_toTopOf="@+id/library_image">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="RULES AND REGULATIONS"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:id="@+id/library_hours_heading"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:text="LIBRARY HOURS"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="50dp"
-                app:cardBackgroundColor="@color/card_yellow"
-                app:cardCornerRadius="20dp">
+            <TextView
+                android:id="@+id/available_days"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:text="Monday - Friday"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/library_hours_heading" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/available_time"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:text="8:00am - 4:00pm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/available_days" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Library Hours"
-                        android:textColor="@color/black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:lineSpacingExtra="4dp"
-                        android:text="Monday - Friday \n8:00am - 4:00pm"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="314dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:background="#FAF7F7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Library Services"
-                        android:textColor="@color/black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/b_n_r_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="BORROWING &amp; RETURNING OF BOOKS"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="5dp"
-                        android:lineSpacingExtra="4dp"
-                        android:text="@string/sti_services"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+        <View
+            android:id="@+id/line_two"
+            android:layout_width="300dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:background="#efe645"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/b_n_r_title" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="10dp"
-                        android:lineSpacingExtra="4dp"
-                        android:text="@string/sti_services2"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/b_n_r_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4sp"
+            android:padding="30px"
+            android:text="1. An ALIS Account is required for all library transactions. \n2. All library users must apple for the ALIS before they can be borrowed from the library. \n3. The use of ALIS is non-transferable. \n4. A student can borrow a maximum of three (3) books at a time but can only borrow two (2) fiction books at a time. \n5. Loan period for are as follows: \n \t \u2022 General Education Books - Overnight (1 Day) \n \t \u2022 Fiction Books - One Week \n \t \ \u2022 Thesis, References &amp; Periodicals - Library Use Only \n6. The borrower is accountable for safekeeping of the book/s during the period of the loan. \n7. The overdue fine is Php 5.00 for each book per day. \n8. Lost of book must be reported to the librarian as soon as possible."
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_two" />
 
-                </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="50dp"
-                app:cardBackgroundColor="@color/card_yellow"
-                app:cardCornerRadius="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Borrowing and Returning of Books"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:lineSpacingExtra="6dp"
-                        android:text="@string/book_policies"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="50dp"
-                app:cardBackgroundColor="@color/card_yellow"
-                app:cardCornerRadius="20dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="LIBRARY RULES &amp; REGULATIONS"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:lineSpacingExtra="6dp"
-                        android:text="@string/library_rules"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"/>
-        </LinearLayout>
-
-    </ScrollView>
-    <include
-        layout="@layout/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
