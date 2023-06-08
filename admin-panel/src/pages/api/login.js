@@ -1,6 +1,6 @@
 import { ZodError, z } from "zod";
 import jwt from "jsonwebtoken";
-import { findUser } from "@/utils/db";
+import { loginUser } from "@/utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         try {
             req.body = JSON.parse(req.body);
             const parsed = InputSchema.parse(req.body);
-            let user = await findUser(parsed);
+            let user = await loginUser(parsed);
             if (!user) {
                 res.status(400).end();
                 return;

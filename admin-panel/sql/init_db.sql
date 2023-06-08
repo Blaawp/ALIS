@@ -51,8 +51,9 @@ CREATE TABLE IF NOT EXISTS `books`(
     synopsis TEXT NOT NULL,
     category_id INT NOT NULL,
     barcode INT NOT NULL,
-    num_copies INT DEFAULT 1,
+    num_copies INT DEFAULT 0,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    cover_link TEXT DEFAULT "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
     PRIMARY KEY(id),
     -- FOREIGN KEY (category_id) REFERENCES book_categories(id),
     UNIQUE(barcode),
@@ -63,11 +64,13 @@ CREATE TABLE IF NOT EXISTS `borrow_transactions`(
     id INT AUTO_INCREMENT,
     book_barcode INT NOT NULL,
     user_id INT NOT NULL,
-    librarian_id INT NOT NULL,
-    book_qty INT NOT NULL,
+    borrow_librarian_id INT NOT NULL,
+    borrow_librarian_id INT DEFAULT NULL,
+    book_qty INT DEFAULT 0,
     due_date DATETIME NOT NULL,
     `status` INT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    returned_at DATETIME DEFAULT NULL,
     PRIMARY KEY(id)
     -- FOREIGN KEY (book_barcode) REFERENCES books(barcode),
 --     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -100,10 +103,11 @@ INSERT INTO book_categories (`category`) VALUES ("Thesis");
 INSERT INTO book_categories (`category`) VALUES ("References");
 INSERT INTO book_categories (`category`) VALUES ("Periodicals");
 
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Librarian", "L.", "1", "librarian1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 0);
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Teacher", "T.", "1", "teacher1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 1);
-INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("User", "U.", "1", "user1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 2);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Librarian", "L.", "1", "librarian1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 1);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("Teacher", "T.", "1", "teacher1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 2);
+INSERT INTO users (first_name, middle_name, last_name, email, password, role) VALUES ("User", "U.", "1", "user1@sti.edu.ph", "$2b$10$Y6kHXXbkaQXrmAtL61Gwc.BJAA96/otd2tnniRN2QyLFSl9XzZeo.", 3);
 
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("When Blood Meets Earth", "E.A. Noble", "Synompys kuno pero mema lang to kase wala akong maisip ilagay daming white space so dadamihan ko pa ang kamemahan kase dami pang white space", 1, 1);
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("LRT & MRT", "E.A. Noble", "Train Routes in PH", 2,2);
-INSERT INTO books (title, author, synopsis, category_id, barcode) VALUES ("ALIS", "Tristan", "ALIS THESIS", 3, 3);
+INSERT INTO books (title, author, synopsis, category_id, barcode, num_copies, cover_link) VALUES ("Les Miserables", "Victor Hugo", "Nag-away dahil sa tinapay", 1, 1, 0, "https://covers.openlibrary.org/b/id/12722874-L.jpg");
+INSERT INTO books (title, author, synopsis, category_id, barcode, num_copies, cover_link) VALUES ("Android Wireless Application Development", "Lauren Darcey", "Book na binasa namin para magawa ang ALIS", 2,2, 100, "https://covers.openlibrary.org/b/id/10116801-L.jpg");
+INSERT INTO books (title, author, synopsis, category_id, barcode, num_copies) VALUES ("ALIS", "Tristan", "ALIS THESIS", 3, 3, 5);
+INSERT INTO books (title, author, synopsis, category_id, barcode, num_copies, cover_link) VALUES ("Noli Me Tangere", "Jose Rizal", "Fantasy ni Rizal", 1,4, 100, "https://covers.openlibrary.org/b/id/9312673-L.jpg");
