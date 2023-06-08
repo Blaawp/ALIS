@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/featured_book_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:text="FEATURED BOOK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_box" />
+
+    <ImageView
+        android:id="@+id/featured_book_image"
+        android:layout_width="362dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/featured_book_text"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/categories_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Categories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/featured_book_image" />
+
+    <TextView
+        android:id="@+id/general_button"
+        android:layout_width="362dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:background="#3F3D55"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="General Collection"
+        android:textColor="#847DDD"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categories_text" />
+
+    <TextView
+        android:id="@+id/fiction_button"
+        android:layout_width="362dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:background="#00F375"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="Fiction Collection"
+        android:textColor="#007C45"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/general_button" />
+
+    <TextView
+        android:id="@+id/theses_button"
+        android:layout_width="362dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:background="#0090E6"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="Theses Collection"
+        android:textColor="#004769"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fiction_button" />
+
+    <EditText
+        android:id="@+id/search_box"
+        android:layout_width="362dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:background="#AAA7A7"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

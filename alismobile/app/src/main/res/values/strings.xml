@@ -1,3 +1,30 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">alis-mobile</string>
+    <string name="sti_services">The STI Library provides the following services for its readers.</string>
+    <string name="sti_services2" tools:ignore="StringEscaping">• Internet and Wi-Fi Service\n• Referral Service\n• Readers\' Service\n• Visiting Researchers (for non-STI  students)</string>
+    <string name="book_policies"> 1. All bonafide Faculty, Staff and Students of STI College of Caloocan can use and borrow books from the library.
+        \n 2. The Library Card is a basic requirement for all circulation transactions at the library.
+        \n 3. All library users must apply for a Library Card before they can borrow from the library.
+        \n 4. The use of the Library Card is non-transferable.
+        \n 5. Library Card should be validated for the current semester.
+        \n 6. A student can borrow a maximum of three (3) books at a time but can only borrow two (2) fiction books at a time.
+        \n 7. Loan period for are as follows: \n\t• General Education Books - Overnight (1 day).
+        \n\t• Fiction Books - One week.
+        \n\t• Theses, References &amp; Periodicals - Library Use Only.
+        \n 8. The borrower is accountable for safekeeping of the book/s during the period of the loan.
+        \n 9. Overdue fine is Php5.00 for each book, per day.
+        \n 10. Lost library card and books must be reported to the Librarian as soon as possible.
+        \n 11. Replacement fee for lost library card is Php50.00.</string>
+    <string name="library_rules"> 1. Silence should be observed inside the library at all times.
+        \n 2. A valid library card is required for all library transactions.
+        \n 3. All library users should log in the library\'s attendance upon entering and before leaving the library.
+        \n 4. Mobile phones and other electronic gadgets must be turned to silent mode. Phone calls must be answered outside the library.
+        \n 5. Wearing of proper uniform is required for all library users. Wearing of caps, bandannas, shades and earrings (for male students) are not allowed.
+        \n 6. Eating, smoking, grooming, running and sleeping are not allowed inside the library. Playing of video games and board games are not allowed inside the library.
+        \n 7. Laptops and electronic gadgets can be used inside the library. However, the library will not be liable for any losses.
+        \n 8. Charging of gadgets are not allowed in the library.
+        \n 9. Library furniture (i.e., tables, chairs, etc.) are not allowed to be relocated or transferred to another place.
+        \n 10. Public display of affection (PDA), discourtesy, disrespecting authority and any unethical actions will not be tolerated inside the library and is subject to appropriate disciplinary actions.
+</string>
 </resources>
