@@ -1,28 +1,16 @@
 package com.example.alis_mobile
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import android.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.alis_mobile.ui.theme.AlismobileTheme
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ExploreActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.explore_home)
+        setContentView(R.layout.cataloging_screen_home)
 
         val homeNav: ImageView = findViewById(R.id.homeNav)
         val compassNav: ImageView = findViewById(R.id.compassNav)
