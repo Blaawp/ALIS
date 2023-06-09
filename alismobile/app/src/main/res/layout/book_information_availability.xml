@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0EEEE">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="313dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/rounded_corner_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/book_image_book_information_availability"
+            android:layout_width="90dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/when_blood_meets_earth" />
+
+        <TextView
+            android:id="@+id/title_book_information_availability"
+            android:layout_width="190dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="When Blood Meets Earth"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/book_image_book_information_availability"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/book_image_book_information_availability"
+            app:layout_constraintTop_toTopOf="@+id/book_image_book_information_availability" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corner_blue_0090e6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+        <TextView
+            android:id="@+id/status_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="STATUS:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/status_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AVAILABLE"
+            android:textColor="#00F376"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/status_heading_book_information_availability"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/book_information_heading_book_information_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="BOOK INFORMATION"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="290dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corner_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_information_heading_book_information_availability">
+
+        <TextView
+            android:id="@+id/author_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Author:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/author_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="E.A Noble"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/author_heading_book_information_availability"
+            app:layout_constraintTop_toTopOf="@+id/author_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/synopsis_book_information_availability"
+            android:layout_width="255dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis fermentum sapien vitae condimentum. Pellentesque commodo efficitur accumsan."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/author_heading_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/author_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/category_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Category:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/synopsis_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/synopsis_book_information_availability" />
+
+        <TextView
+            android:id="@+id/lvlnum_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Level Number:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/category_heading_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/category_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/shelfnum_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Shelf Number:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lvlnum_heading_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/lvlnum_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/loan_period_heading_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Loan Period&quot;"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/shelfnum_heading_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/shelfnum_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/category_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Fiction"
+            app:layout_constraintStart_toEndOf="@+id/category_heading_book_information_availability"
+            app:layout_constraintTop_toTopOf="@+id/category_heading_book_information_availability" />
+
+        <TextView
+            android:id="@+id/lvlnum_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="3"
+            app:layout_constraintStart_toStartOf="@+id/category_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/category_book_information_availability" />
+
+        <TextView
+            android:id="@+id/shelfnum__book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="1"
+            app:layout_constraintStart_toStartOf="@+id/lvlnum_book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/lvlnum_book_information_availability" />
+
+        <TextView
+            android:id="@+id/loan_period_book_information_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="One Week"
+            app:layout_constraintStart_toStartOf="@+id/shelfnum__book_information_availability"
+            app:layout_constraintTop_toBottomOf="@+id/shelfnum__book_information_availability" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/back_btn_book_information_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:background="#006EB4"
+        android:text="BACK"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+
+    <Button
+        android:id="@+id/navigate_btn_book_information_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:background="#006EB4"
+        android:text="NAVIGATE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+</androidx.constraintlayout.widget.ConstraintLayout>

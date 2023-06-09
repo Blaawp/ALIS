@@ -4,110 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0">
-
-    <LinearLayout
-        android:id="@+id/search_box3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-        <EditText
-            android:padding="5dp"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:background="@drawable/searchbar"
-            android:inputType="text"
-            android:hint="Name"
-            />
-        <ImageView
-            android:id="@+id/searchBtn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/search_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/search_box"
-            android:clickable="true"/>
-    </LinearLayout>
+    android:background="#F0EEEE" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/bookCard"
-    android:layout_width="362dp"
-    android:layout_height="135dp"
-    android:layout_marginTop="25dp"
-    android:background="@drawable/backgbook"
-    android:clickable="true"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/search_box3">
-
-    <ImageView
-        android:id="@+id/book_image"
-        android:layout_width="107dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/book_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Title"
-        app:layout_constraintStart_toEndOf="@+id/book_image"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/author_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:text="Author"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/book_image"
-        app:layout_constraintTop_toBottomOf="@+id/book_title" />
-
-    <TextView
-        android:id="@+id/synopsis_text"
-        android:layout_width="223dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:text="Synopsis"
-        android:textSize="10sp"
+        android:id="@+id/book_card_circulation_screen"
+        android:layout_width="330dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corner_white_ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/book_image"
-        app:layout_constraintTop_toBottomOf="@+id/author_text" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-    <TextView
-        android:id="@+id/category_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="8dp"
-        android:padding="2dp"
-        android:background="@drawable/categbackground"
-        android:text="category"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/book_title"
-        app:layout_constraintStart_toEndOf="@+id/book_title"
-        app:layout_constraintTop_toTopOf="@+id/book_title" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-    <include
-        layout="@layout/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <ImageView
+            android:id="@+id/book_card_image_circulation_screen"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/when_blood_meets_earth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/when_blood_meets_earth"
+            tools:srcCompat="@drawable/when_blood_meets_earth" />
+
+        <TextView
+            android:id="@+id/book_card_title_circulation_screen"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="When Blood Meets Earth"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/book_card_image_circulation_screen"
+            app:layout_constraintTop_toTopOf="@+id/book_card_image_circulation_screen" />
+
+        <TextView
+            android:id="@+id/book_card_author_circulation_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="E.A Noble"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/book_card_image_circulation_screen"
+            app:layout_constraintTop_toBottomOf="@+id/book_card_title_circulation_screen" />
+
+        <TextView
+            android:id="@+id/book_card_synopsis_circulation_screen"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis fermentum sapien vitae condimentum. Pellentesque commodo efficitur accumsan."
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/book_card_image_circulation_screen"
+            app:layout_constraintTop_toBottomOf="@+id/book_card_author_circulation_screen" />
+
+        <TextView
+            android:id="@+id/category_circulation_screen"
+            android:layout_width="50dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rounded_corner_purple_4c42e8"
+            android:gravity="center"
+            android:text="Fiction"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/book_card_title_circulation_screen" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/rounded_corner_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/search_icon_searched_screen"
+            android:layout_width="50dp"
+            android:layout_height="31dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search" />
+
+        <TextView
+            android:id="@+id/text_input_seached_screen"
+            android:layout_width="260dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical"
+            android:text="When Blood Meets Earth"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

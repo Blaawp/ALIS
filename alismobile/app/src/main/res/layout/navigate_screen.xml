@@ -6,39 +6,36 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/navigate_title_navscreen"
+        android:id="@+id/navigate_heading_navscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="100dp"
         android:text="NAVIGATING"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/map_text_navscreen"
+        android:id="@+id/map_heading_navscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="MAP"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navigate_title_navscreen" />
+        app:layout_constraintTop_toBottomOf="@+id/navigate_heading_navscreen" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="362dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="341dp"
+        android:layout_height="513dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map_text_navscreen"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <include
-        layout="@layout/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/map_heading_navscreen"
+        app:srcCompat="@drawable/map_snip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
