@@ -12,10 +12,10 @@ export default function borrowing() {
                 <h1>Borrowing Form</h1>
                 <form action="/api/borrow" method="post">
                     <label htmlFor="bookid">Book ID</label>
-                    <input type="text" id="bookid" name="bookid" required />
+                    <input type="text" id="bookid" name="bookBarcode" required />
                 
                     <label htmlFor="studentid">Student ID</label>
-                    <input type="text" id="studentid" name="studentid" required />
+                    <input type="text" id="studentid" name="userId" required />
                 
                     <button type="submit">Submit</button>
                 </form>
