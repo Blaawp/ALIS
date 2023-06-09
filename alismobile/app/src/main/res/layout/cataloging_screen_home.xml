@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/search_icon"
+            android:id="@+id/search_icon_searched_screen"
             android:layout_width="50dp"
             android:layout_height="31dp"
             android:layout_marginEnd="10dp"

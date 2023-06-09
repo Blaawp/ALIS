@@ -65,10 +65,13 @@
                 android:layout_width="90dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/when_blood_meets_earth"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:src="@drawable/when_blood_meets_earth"
+                tools:srcCompat="@drawable/when_blood_meets_earth" />
 
             <TextView
                 android:id="@+id/book_card_title_circulation_screen"
