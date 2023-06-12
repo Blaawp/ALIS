@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun switchDestinationRules() {
-        val intent = Intent(this, RuleActivity::class.java)
+        val intent = Intent(this, AppActivity::class.java)
         startActivity(intent)
     }
     private fun placeholderLogin(username: String, password: String) {
