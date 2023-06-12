@@ -24,29 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RuleActivity"
+            android:name=".AppActivity"
             android:label="Rule"
             android:theme="@style/Theme.Alismobile" />
-        <activity
-            android:name=".ProfileActivity"
-            android:label="Profile"
-            android:theme="@style/Theme.Alismobile" />
-        <activity
-            android:name=".ExploreActivity"
-            android:label="Explore"
-            android:theme="@style/Theme.Alismobile" />
-        <activity
-            android:name=".SearchActivity"
-            android:label="Search"
-            android:theme="@style/Theme.Alismobile" />
-        <activity
-            android:name=".BookActivity"
-            android:label="Book"
-            android:theme="@style/Theme.Alismobile" />
-        <activity
-            android:name=".NavActivity"
-            android:label="Book"
-            android:theme="@style/Theme.Alismobile" />
+
     </application>
 
 </manifest>
