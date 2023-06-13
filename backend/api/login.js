@@ -1,6 +1,6 @@
 import { ZodError, z } from "zod";
 import jwt from "jsonwebtoken";
-import { loginUser } from "@/utils/db";
+import { loginUser } from "../utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "POST") {

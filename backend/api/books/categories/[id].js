@@ -1,20 +1,16 @@
-import { findBook } from "@/utils/db";
-import { ZodError, z } from "zod";
+import { z } from "zod";
+import { findBookCategory } from "../../../utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
             const inputSchema = z.number().min(0);
             const parsed = inputSchema.parse(parseInt(req.query[":id"]));
-            const books = await findBook({ bookBarcode: parsed, limit: 1 });
-            res.status(200).json(books);
+            const categories = await findBookCategory({ id: parsed });
+            res.status(200).json(categories);
             return;
         } catch (e) {
-            if (e instanceof ZodError) {
-                res.status(400).end();
-                return;
-            }
-
+            console.error(e);
             res.status(500).end();
             return;
         }

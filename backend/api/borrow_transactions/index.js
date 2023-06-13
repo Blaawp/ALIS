@@ -1,5 +1,5 @@
-import NotEnoughBooks from "@/errors/NotEnoughBooks";
-import { findBorrowTransaction, addBorrowTransaction } from "@/utils/db";
+import NotEnoughBooks from "../../errors/NotEnoughBooks";
+import { findBorrowTransaction, addBorrowTransaction } from "../../utils/db";
 import { ZodError, z } from "zod";
 
 export default async function handler(req, res) {

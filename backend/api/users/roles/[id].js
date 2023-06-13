@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { findUserRole } from "@/utils/db";
+import { findUserRole } from "../../../utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
             const inputSchema = z.number().min(0);
-            const parsed = inputSchema.parse(parseInt(req.query[":id"]));
+            const parsed = inputSchema.parse(parseInt(req.query["id"]));
             const categories = await findUserRole({ id: parsed });
             res.status(200).json(categories);
             return;
