@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
-import { notifications } from "@/data/notifications";
-import NotificationList from "@/components/NotificationList";
+import { dues } from "@/data/dues";
+import DueDateList from "@/components/DueDateList";
 
-export default function notification() {
+export default function DueDates() {
     return (
         <>
             <Navigation />
@@ -11,11 +11,7 @@ export default function notification() {
                     <div className="grid grid-cols-4 gap-y-3 place-content-center">
                         
                         <div className="flex w-full flex-row items-center justify-center align-middle">
-                            <p>Student's Name</p>
-                        </div>
-
-                        <div className="flex w-full flex-row items-center justify-center align-middle">
-                            <p>Student ID</p>
+                            <p>Student's Information</p>
                         </div>
 
                         <div className="flex w-full flex-row items-center justify-center align-middle">
@@ -23,11 +19,15 @@ export default function notification() {
                         </div>
 
                         <div className="flex w-full flex-row items-center justify-center align-middle">
-                            <p>Title Of Books</p>
+                            <p>Title of Book</p>
                         </div>
 
-                        {notifications.map((noti, i) => (
-                            <NotificationList {...noti} key={i} />
+                        <div className="flex w-full flex-row items-center justify-center align-middle">
+                            <p>Due Date</p>
+                        </div>
+
+                        {dues.map((duedate, i) => (
+                            <DueDateList {...duedate} key={i} />
                         ))}
                     </div>
                 </div>
