@@ -1,20 +1,20 @@
-import Link from "next/link";
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import { useRouter } from "next/router";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
-    const router = useRouter();
+    const { pathname } = useLocation();
 
     return (
         <nav className="flex max-h-24 flex-row items-center justify-between bg-white px-4 text-black">
             <img src="/logo/alis-transparent.png" className="w-20" alt=" " />
             <div className="flex w-6/12 flex-row items-center justify-around">
                 <Link
-                    href="/dashboard"
+                    to="/dashboard"
                     className={`text-xl font-bold ${
-                        router.pathname === "/dashboard"
+                        pathname === "/dashboard"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -22,9 +22,9 @@ export default function Navigation() {
                     Dashboard
                 </Link>
                 <Link
-                    href="/inventory"
+                    to="/inventory"
                     className={`text-xl font-bold ${
-                        router.pathname === "/inventory"
+                        pathname === "/inventory"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -32,9 +32,9 @@ export default function Navigation() {
                     Inventory
                 </Link>
                 <Link
-                    href="/archives"
+                    to="/archives"
                     className={`text-xl font-bold ${
-                        router.pathname === "/archives"
+                        pathname === "/archives"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -42,9 +42,9 @@ export default function Navigation() {
                     Archives
                 </Link>
                 <Link
-                    href="/notification"
+                    to="/notification"
                     className={`text-xl font-bold ${
-                        router.pathname === "/notification"
+                        pathname === "/notification"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -52,9 +52,9 @@ export default function Navigation() {
                     Notification
                 </Link>
                 <Link
-                    href="/duedates"
+                    to="/duedates"
                     className={`text-xl font-bold ${
-                        router.pathname === "/duedates"
+                        pathname === "/duedates"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -62,9 +62,9 @@ export default function Navigation() {
                     Due Dates
                 </Link>
                 <Link
-                    href="/borrowing"
+                    to="/borrowing"
                     className={`text-xl font-bold ${
-                        router.pathname === "/borrowing"
+                        pathname === "/borrowing"
                             ? "text-blue-500"
                             : "text-black"
                     }`}
@@ -75,7 +75,7 @@ export default function Navigation() {
             <div className="flex w-2/12 flex-row items-center justify-evenly">
                 <FaUserCircle color="black" />
                 <p className="text-xl font-bold">Admin</p>
-                <Link href="/">
+                <Link to="/">
                     <RiLogoutBoxRLine color="black" />
                 </Link>
             </div>

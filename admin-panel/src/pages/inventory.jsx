@@ -2,13 +2,13 @@ import Navigation from "@/components/Navigation";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { books } from "@/data/books";
 import BookCard from "@/components/BookCard";
-import { useAtom, useAtomValue } from "jotai";
-import { inventorySelectedBookAtom } from "@/Store";
+import { useAtom } from "jotai";
+import { inventorySelectedBookAtom } from "../Store";
 import { useEffect } from "react";
 import SearchBar from "@/components/SearchBar";
 import BigBookCard from "@/components/BigBookCard";
 
-export default function inventory() {
+export default function Inventory() {
     const [selectedBook, setSelectedBook] = useAtom(inventorySelectedBookAtom);
 
     useEffect(() => {

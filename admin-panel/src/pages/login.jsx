@@ -1,26 +1,16 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Link from "next/link";
+import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const inter = Inter({ subsets: ["latin"] });
+import people_cropped from "@/assets/people-cropped.jpg";
+import logo_sti from "@/assets/logo/sti.svg";
 
-export default function Home() {
+export default function LoginRegister() {
     return (
         <>
-            <Head>
-                <title>ALIS</title>
-                <meta name="ALIS" content="Library Application" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main className={`${inter.className} flex h-screen flex-row`}>
+            <div className="flex h-screen flex-row">
                 <div className="h-full w-3/4">
                     <img
-                        src="/people-cropped.jpg"
+                        src={people_cropped}
                         alt=" "
                         className="h-full w-full object-cover object-center"
                     ></img>
@@ -33,7 +23,7 @@ export default function Home() {
                     <div className="bg-black-overlay w-3/4"></div>
                 </div>
                 <div className="flex w-1/4 flex-col items-center justify-center bg-[#fff200] p-4 align-middle">
-                    <img src="/logo/sti.svg" alt=" " className="mb-12 w-2/4" />
+                    <img src={logo_sti} alt=" " className="mb-12 w-2/4" />
                     <h1 className="mb-12 text-2xl font-bold text-blue-500">
                         A.L.I.S Login
                     </h1>
@@ -63,7 +53,7 @@ export default function Home() {
                         Forgot Password?
                     </p>
                     <Link
-                        href="/dashboard"
+                        to="/dashboard"
                         className="mb-4 w-3/4 rounded bg-blue-500 p-2 text-center font-bold"
                     >
                         LOGIN
@@ -76,7 +66,7 @@ export default function Home() {
                     </button>
                     <p className="text-sm text-black">©2023 ALIS, Wala </p>
                 </div>
-            </main>
+            </div>
         </>
     );
 }
