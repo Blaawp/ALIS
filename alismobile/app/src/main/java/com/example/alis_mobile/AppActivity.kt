@@ -47,28 +47,15 @@ class AppActivity : ComponentActivity() {
         // PROFILE WITH ANIMATION
 
         selectHamburger.setOnClickListener {
+            selectHamburger.isClickable = false
             profileScreen = inflater.inflate(R.layout.profile_screen, null)
             // Set the initial position of the profileLayout outside the left edge of the screen
             profileScreen?.let { screen ->
-                screen.translationX = -(screen.width?.toFloat() ?: 0f)
-            }
-
-            val closeButton = profileScreen?.findViewById<ImageView>(R.id.close_button)
-            closeButton?.setOnClickListener {
-                profileScreen?.let { screen ->
-                    val animator = ObjectAnimator.ofFloat(
-                        screen,
-                        "translationX",
-                        screen.translationX,
-                        -screen.width.toFloat()
-                    )
-                    animator.duration = 500
-
-                    animator.start()
-                }
+                screen.translationX = -(screen.width.toFloat())
             }
 
             val rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
+            profileScreen?.visibility = View.INVISIBLE // to avoid flicker
             rootView.addView(profileScreen)
             profileScreen?.post {
                 val animator = ObjectAnimator.ofFloat(
@@ -77,9 +64,25 @@ class AppActivity : ComponentActivity() {
                     -profileScreen!!.width.toFloat(),
                     0f
                 )
+                profileScreen?.visibility = View.VISIBLE
                 animator.duration = 500
 
                 animator.start()
+            }
+
+            val closeButton = profileScreen?.findViewById<ImageView>(R.id.close_button)
+            closeButton?.setOnClickListener {
+                selectHamburger.isClickable = true
+                profileScreen?.let { screen ->
+                    val animator = ObjectAnimator.ofFloat(
+                        screen,
+                        "translationX",
+                        screen.translationX,
+                        -screen.width.toFloat()
+                    )
+                    animator.duration = 500
+                    animator.start()
+                }
             }
         }
 
