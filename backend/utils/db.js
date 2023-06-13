@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 import bcrypt from "bcrypt";
-import NotEnoughBooks from "@/errors/NotEnoughBooks";
+import NotEnoughBooks from "../errors/NotEnoughBooks";
 import moment from "moment";
 
 export const loginUser = async ({ email, password }) => {

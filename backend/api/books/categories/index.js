@@ -1,4 +1,4 @@
-import { findBookCategory } from "@/utils/db";
+import { findBookCategory } from "../../../utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {

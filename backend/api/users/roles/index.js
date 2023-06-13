@@ -1,4 +1,4 @@
-import { findUserRole } from "@/utils/db";
+import { findUserRole } from "../../../utils/db";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {
