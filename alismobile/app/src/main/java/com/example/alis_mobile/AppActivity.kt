@@ -1,7 +1,6 @@
 package com.example.alis_mobile
 
 import android.animation.ObjectAnimator
-import android.content.Intent
 import android.os.Bundle
 import android.graphics.Color
 
@@ -13,6 +12,7 @@ import android.widget.FrameLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -30,6 +30,8 @@ class AppActivity : ComponentActivity() {
 
         val currLayout = findViewById<FrameLayout>(R.id.contentView)
 
+        val currSect = findViewById<TextView>(R.id.currsection)
+
         val homeNav = findViewById<ImageView>(R.id.homeNav)
         val exploreNav = findViewById<ImageView>(R.id.exploreNav)
         val bookNav = findViewById<ImageView>(R.id.bookNav)
@@ -40,6 +42,7 @@ class AppActivity : ComponentActivity() {
 
         var profileScreen: View? = null
         val selectHamburger = findViewById<View>(R.id.hamburger)
+
 
         // PROFILE WITH ANIMATION
 
@@ -89,6 +92,8 @@ class AppActivity : ComponentActivity() {
             currLayout.removeAllViews()
             val newView = inflater.inflate(R.layout.rule_screen, currLayout, false)
             currLayout.addView(newView)
+
+            currSect.text = "Home"
         }
 
         //EXPLORE BRANCH
@@ -100,6 +105,8 @@ class AppActivity : ComponentActivity() {
             currLayout.removeAllViews()
             val newView = inflater.inflate(R.layout.cataloging_screen_home, currLayout, false)
             currLayout.addView(newView)
+
+            currSect.text = "Cataloging"
         }
 
         // BOOK MENU BRANCH
@@ -112,6 +119,8 @@ class AppActivity : ComponentActivity() {
             val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
             currLayout.addView(searchedView)
 
+            currSect.text = "Book Transaction"
+
             val bookClick = searchedView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
             bookClick.setOnClickListener {
                 currLayout.removeAllViews()
@@ -123,44 +132,49 @@ class AppActivity : ComponentActivity() {
 
                 bckButton.setOnClickListener {
                     currLayout.removeAllViews()
-                    val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
-                    currLayout.addView(searchedView)
+                    setClickListeners()
                 }
 
                 naviButton.setOnClickListener {
+                    currSect.text = "Navigation"
                     currLayout.removeAllViews()
                     val navigateView = inflater.inflate(R.layout.navigate_screen, currLayout, false)
                     currLayout.addView(navigateView)
                 }
             }
-            // setClickListeners(searchedView)
         }
     }
 
-    private fun switchDestinationLogin() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-    }
-
-    /*private fun setClickListeners(searchedView: View) {
-        val bckButton = searchedView.findViewById<Button>(R.id.back_btn_book_information_availability)
-        val naviButton = searchedView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
-        val inflater = LayoutInflater.from(this)
+    private fun setClickListeners() {
         val currLayout = findViewById<FrameLayout>(R.id.contentView)
+        val inflater = LayoutInflater.from(this)
 
-        val backClickListener = View.OnClickListener {
-            currLayout.removeAllViews()
-            val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
-            currLayout.addView(searchedView)
-        }
-        bckButton.setOnClickListener(backClickListener)
+        currLayout.removeAllViews()
+        val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
+        currLayout.addView(searchedView)
 
-        val navigateClickListener = View.OnClickListener {
+        val bookClick = searchedView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
+        bookClick.setOnClickListener {
             currLayout.removeAllViews()
-            val navigateView = inflater.inflate(R.layout.navigate_screen, currLayout, false)
-            currLayout.addView(navigateView)
+            val newView = inflater.inflate(R.layout.book_information_availability, currLayout, false)
+            currLayout.addView(newView)
+
+            val bckButton = newView.findViewById<Button>(R.id.back_btn_book_information_availability)
+            val naviButton = newView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
+
+            bckButton.setOnClickListener {
+                currLayout.removeAllViews()
+                val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
+                currLayout.addView(searchedView)
+            }
+
+            naviButton.setOnClickListener {
+                currLayout.removeAllViews()
+                val navigateView = inflater.inflate(R.layout.navigate_screen, currLayout, false)
+                currLayout.addView(navigateView)
+            }
         }
-        naviButton.setOnClickListener(navigateClickListener)
-    }*/
+    }
+
 
 }
