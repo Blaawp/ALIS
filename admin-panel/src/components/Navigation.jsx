@@ -1,11 +1,15 @@
+import { useSetAtom } from "jotai";
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { sessionAtom } from "../Store";
 
 export default function Navigation() {
     const { pathname } = useLocation();
+
+    const setSession = useSetAtom(sessionAtom);
 
     return (
         <nav className="flex max-h-24 flex-row items-center justify-between bg-white px-4 text-black">
@@ -75,7 +79,7 @@ export default function Navigation() {
             <div className="flex w-2/12 flex-row items-center justify-evenly">
                 <FaUserCircle color="black" />
                 <p className="text-xl font-bold">Admin</p>
-                <Link to="/">
+                <Link to="/" onClick={() => setSession(null)}>
                     <RiLogoutBoxRLine color="black" />
                 </Link>
             </div>
