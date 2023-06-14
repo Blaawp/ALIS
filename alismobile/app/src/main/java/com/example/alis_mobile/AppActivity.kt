@@ -119,14 +119,18 @@ class AppActivity : ComponentActivity() {
                 val newView = inflater.inflate(R.layout.searched_screen, currLayout, false)
                 currLayout.addView(newView)
 
-                val bookClick = newView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
+                val bookClick =
+                    newView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
                 bookClick.setOnClickListener {
                     currLayout.removeAllViews()
-                    val newView = inflater.inflate(R.layout.book_information_availability, currLayout, false)
+                    val newView =
+                        inflater.inflate(R.layout.book_information_availability, currLayout, false)
                     currLayout.addView(newView)
 
-                    val bckButton = newView.findViewById<Button>(R.id.back_btn_book_information_availability)
-                    val naviButton = newView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
+                    val bckButton =
+                        newView.findViewById<Button>(R.id.back_btn_book_information_availability)
+                    val naviButton =
+                        newView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
 
                     bckButton.setOnClickListener {
                         currLayout.removeAllViews()
@@ -136,9 +140,11 @@ class AppActivity : ComponentActivity() {
                     naviButton.setOnClickListener {
                         currSect.text = "Navigation"
                         currLayout.removeAllViews()
-                        val navigateView = inflater.inflate(R.layout.navigate_screen, currLayout, false)
+                        val navigateView =
+                            inflater.inflate(R.layout.navigate_screen, currLayout, false)
                         currLayout.addView(navigateView)
                     }
+                }
             }
         }
 
