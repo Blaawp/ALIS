@@ -58,7 +58,7 @@
             android:id="@+id/book_card_circulation_screen"
             android:layout_width="330dp"
             android:layout_height="150dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/rounded_corner_white_ffffff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
