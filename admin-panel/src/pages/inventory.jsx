@@ -7,6 +7,7 @@ import { inventorySelectedBookAtom } from "../Store";
 import { useEffect } from "react";
 import SearchBar from "@/components/SearchBar";
 import BigBookCard from "@/components/BigBookCard";
+import SidePanel from "@/components/SidePanel";
 
 export default function Inventory() {
     const [selectedBook, setSelectedBook] = useAtom(inventorySelectedBookAtom);
@@ -30,26 +31,29 @@ export default function Inventory() {
     }
 
     return (
-        <>
+        <div>
             <Navigation />
-            <div className="my-24 flex h-full w-full flex-col items-center justify-center space-y-12 align-middle">
-                <SearchBar />
+            <div className="flex flex-row h-screen mt-5">
+                <SidePanel />
+                <div className="my-24 flex h-full w-full flex-col items-center justify-center space-y-12 align-middle">
+                    <SearchBar />
 
-                <div className="grid w-10/12 grid-cols-3 gap-x-4 gap-y-5">
-                    {books.map((book) => (
-                        <BookCard
-                            {...book}
-                            onClick={() => {
-                                setSelectedBook(book);
-                            }}
-                        />
-                    ))}
-                </div>
+                    <div className="grid w-10/12 grid-cols-3 gap-x-4 gap-y-5">
+                        {books.map((book) => (
+                            <BookCard
+                                {...book}
+                                onClick={() => {
+                                    setSelectedBook(book);
+                                }}
+                            />
+                        ))}
+                    </div>
 
-                <div className="flex w-10/12 flex-row justify-end">
-                    <BsFillPlusSquareFill color="black" size="50px" />
-                </div>
+                    <div className="flex w-10/12 flex-row justify-end">
+                        <BsFillPlusSquareFill color="black" size="50px" />
+                    </div>
+                </div>  
             </div>
-        </>
+        </div>
     );
 }

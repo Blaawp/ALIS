@@ -5,7 +5,7 @@ export const books = [
         synopsis:
             "Synompys kuno pero mema lang to kase wala akong maisip ilagay daming white space so dadamihan ko pa ang kamemahan kase dami pang white space",
         img: "/books/book1.jpg",
-        genre: "Fiction"
+        genre: "Fiction",
     },
     {
         title: "When Blood Meets Earth",

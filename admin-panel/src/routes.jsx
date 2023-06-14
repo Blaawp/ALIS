@@ -13,27 +13,41 @@ export const router = createBrowserRouter([
         element: <LoginRegister />
     },
     {
-        path: "/archives",
-        element: <Archives />
-    },
-    {
         path: "/dashboard",
         element: <Dashboard />
-    },
-    {
-        path: "/borrowing",
-        element: <Borrowing />
-    },
-    {
-        path: "/duedates",
-        element: <DueDates />
     },
     {
         path: "/inventory",
         element: <Inventory />
     },
     {
-        path: "/notification",
-        element: <Notification />
-    }
+        path: "/archives",
+        element: <Archives />
+    },
+    {
+        path: "/transactions",
+        element: <Inventory />
+    },
+    {
+        path: "/addAccount",
+        element: <Inventory />
+    },
+    {
+        path: "/reports",
+        element: <Inventory />
+    },
+
+    {
+        path: "/borrowing",
+        element: <Borrowing />
+    },
+    // {
+    //     path: "/duedates",
+    //     element: <DueDates />
+    // },
+    
+    // {
+    //     path: "/notification",
+    //     element: <Notification />
+    // }
 ]);
