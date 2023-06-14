@@ -10,7 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.alis_mobile.session.Session
 import com.example.alis_mobile.ui.theme.AlismobileTheme
+import java.lang.Exception
 
 class MainActivity : ComponentActivity() {
 
@@ -35,19 +37,37 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun switchDestinationRules() {
-        val intent = Intent(this, RuleActivity::class.java)
+        val intent = Intent(this, AppActivity::class.java)
         startActivity(intent)
     }
     private fun placeholderLogin(username: String, password: String) {
-        val expectedUsername = "temp"
-        val expectedPassword = "password"
+//        val expectedUsername = "temp"
+//        val expectedPassword = "password"
+//
+//        if (username == expectedUsername && password == expectedPassword) {
+//            switchDestinationRules()
+//        } else {
+//            // Login failed
+//            Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+//        }
 
-        if (username == expectedUsername && password == expectedPassword) {
-            switchDestinationRules()
-        } else {
-            // Login failed
-            Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
-        }
+        Thread {
+
+            try{
+                Session.getInstance().login(username, password)
+                runOnUiThread{
+                    switchDestinationRules()
+                    usernameEditText.setText("")
+                    passwordEditText.setText("")
+                }
+            }
+            catch (e: Exception){
+                runOnUiThread{
+                    Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }.start()
     }
 }
 
