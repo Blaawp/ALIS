@@ -1,17 +1,17 @@
 import moment from "moment";
 import NotEnoughBooks from "../../errors/NotEnoughBooks";
-import { findBorrowTransaction, addBorrowTransaction } from "../../utils/db";
+import { findAllBorrowTransaction, addBorrowTransaction } from "../../utils/db";
 import { ZodError, z } from "zod";
 
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
-            const InputSchema = z.object({
-                userId: z.number().min(1),
-                bookBarcode: z.number().min(0)
-            });
-            const parsed = InputSchema.parse(req.query);
-            const transaction = await findBorrowTransaction(parsed);
+            // const InputSchema = z.object({
+            //     userId: z.number().min(1),
+            //     bookBarcode: z.number().min(0)
+            // });
+            // const parsed = InputSchema.parse(req.query);
+            const transaction = await findAllBorrowTransaction({});
             res.status(200).json(transaction);
             return;
         } catch (e) {

@@ -103,6 +103,15 @@ export const findBorrowTransaction = async ({ userId, bookBarcode }) => {
     return values;
 };
 
+export const findAllBorrowTransaction = async ({ limit = 1000 }) => {
+    const conn = await mysql.createConnection(process.env.DATABASE_URL);
+    const sqlStatement =
+        "SELECT bt.id as id, user_id, first_name, middle_name, last_name, title, synopsis, author, category, status_name, status_name FROM borrow_transactions bt JOIN borrow_statuses bs ON bs.id = status JOIN users u ON u.id = user_id JOIN books b ON b.barcode = book_barcode JOIN book_categories bc ON b.category_id = bc.id ORDER BY bt.created_at DESC LIMIT ?;";
+    const inputValues = [limit];
+    const [values] = await conn.execute(sqlStatement, inputValues);
+    return values;
+};
+
 export const addBorrowTransaction = async ({
     userId,
     bookBarcode,
