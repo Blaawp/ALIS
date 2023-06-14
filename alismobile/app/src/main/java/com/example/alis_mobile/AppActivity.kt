@@ -226,8 +226,7 @@ class AppActivity : ComponentActivity() {
 
             bckButton.setOnClickListener {
                 currLayout.removeAllViews()
-                val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
-                currLayout.addView(searchedView)
+                setClickListeners()
             }
 
             naviButton.setOnClickListener {

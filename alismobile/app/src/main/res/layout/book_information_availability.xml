@@ -215,9 +215,10 @@
         android:background="#006EB4"
         android:text="BACK"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout7"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
         android:id="@+id/navigate_btn_book_information_availability"
@@ -229,5 +230,5 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
