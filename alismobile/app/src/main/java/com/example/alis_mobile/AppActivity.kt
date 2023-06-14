@@ -42,8 +42,13 @@ class AppActivity : ComponentActivity() {
         val selectExplore = findViewById<View>(R.id.selectExplore)
         val selectBook = findViewById<View>(R.id.selectBook)
 
-        var profileScreen: View? = inflater.inflate(R.layout.profile_screen, null)
+        val profileScreen: View? = inflater.inflate(R.layout.profile_screen, null)
+
         val selectHamburger = findViewById<View>(R.id.hamburger)
+
+        val rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
+        profileScreen?.visibility = View.INVISIBLE // to avoid flicker
+        rootView.addView(profileScreen)
 
 
         // PROFILE WITH ANIMATION
@@ -54,10 +59,6 @@ class AppActivity : ComponentActivity() {
             profileScreen?.let { screen ->
                 screen.translationX = -(screen.width.toFloat())
             }
-
-            val rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
-            profileScreen?.visibility = View.INVISIBLE // to avoid flicker
-            rootView.addView(profileScreen)
             profileScreen?.post {
                 val animator = ObjectAnimator.ofFloat(
                     profileScreen,
@@ -175,6 +176,7 @@ class AppActivity : ComponentActivity() {
         courseField.text = "Wala pang course field sa DB"
         numberField.text = "Wala pang number field sa DB"
         emailField.text = user?.optString("email") ?: "Null"
+
     }
 
     private fun setClickListeners() {
