@@ -155,13 +155,15 @@ class AppActivity : ComponentActivity() {
             selectExplore.setBackgroundColor(Color.TRANSPARENT)
             selectBook.setBackgroundColor(selected)
             currLayout.removeAllViews()
-            val bookTransactView = inflater.inflate(R.layout.book_transaction_screen, currLayout, false)
+            val bookTransactView =
+                inflater.inflate(R.layout.book_transaction_screen, currLayout, false)
             currLayout.addView(bookTransactView)
 
             currSect.text = "Book Transaction"
 
-            }
         }
+
+
 
         profileScreen?.let {
             updateProfileTexts(it)
