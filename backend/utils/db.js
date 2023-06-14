@@ -106,7 +106,8 @@ export const findBorrowTransaction = async ({ userId, bookBarcode }) => {
 export const addBorrowTransaction = async ({
     userId,
     bookBarcode,
-    librarianId
+    librarianId,
+    dueDate
 }) => {
     const conn = await mysql.createConnection(process.env.DATABASE_URL);
     await conn.query("START TRANSACTION");
@@ -174,12 +175,12 @@ export const addBorrowTransaction = async ({
         throw Error("Book is not a borrowable category");
     }
 
-    let dueDate =
-        book.category === "Fiction"
-            ? moment().add(7, "day")
-            : moment().add(1, "day");
+    // let dueDate =
+    //     book.category === "Fiction"
+    //         ? moment().add(7, "day")
+    //         : moment().add(1, "day");
 
-    dueDate = dueDate.format("YYYY-MM-DD hh:mm:ss");
+    let dueDateStr = moment(dueDate).format("YYYY-MM-DD hh:mm:ss");
 
     await conn.query("UPDATE books SET num_copies = ? WHERE barcode = ?", [
         book.num_copies - 1,
@@ -188,7 +189,7 @@ export const addBorrowTransaction = async ({
 
     await conn.query(
         "INSERT INTO borrow_transactions(book_barcode, user_id, borrow_librarian_id, book_qty, due_date, status) VALUES (?,?,?,?,?,?)",
-        [book.barcode, user.id, librarianId, 1, dueDate, 1]
+        [book.barcode, user.id, librarianId, 1, dueDateStr, 1]
     );
     await conn.commit();
 

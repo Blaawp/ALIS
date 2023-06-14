@@ -6,6 +6,7 @@ import Borrowing from "./pages/borrowing";
 import DueDates from "./pages/duedates";
 import Notification from "./pages/notification";
 import { createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./components/routes/ProtectedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -14,38 +15,66 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard />
+        element: (
+            <ProtectedRoute>
+                <Dashboard />
+            </ProtectedRoute>
+        )
     },
     {
         path: "/inventory",
-        element: <Inventory />
+        element: (
+            <ProtectedRoute>
+                <Inventory />
+            </ProtectedRoute>
+        )
     },
     {
         path: "/archives",
-        element: <Archives />
+        element: (
+            <ProtectedRoute>
+                <Archives />
+            </ProtectedRoute>
+        )
     },
     {
         path: "/transactions",
-        element: <Inventory />
+        element: (
+            <ProtectedRoute>
+                <Inventory />
+            </ProtectedRoute>
+        )
     },
     {
         path: "/addAccount",
-        element: <Inventory />
+        element: (
+            <ProtectedRoute>
+                <Inventory />
+            </ProtectedRoute>
+        )
     },
     {
         path: "/reports",
-        element: <Inventory />
+        element: (
+            <ProtectedRoute>
+                <Inventory />
+            </ProtectedRoute>
+        )
     },
 
     {
         path: "/borrowing",
-        element: <Borrowing />
-    },
+        element: (
+            <ProtectedRoute>
+                <Borrowing />
+            </ProtectedRoute>
+        )
+    }
     // {
     //     path: "/duedates",
     //     element: <DueDates />
     // },
-    
+
     // {
     //     path: "/notification",
     //     element: <Notification />

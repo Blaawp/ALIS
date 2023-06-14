@@ -5,8 +5,13 @@ export default function BookCard({
     genre,
     img,
     status = null,
-    onClick = null
+    onClick = null,
+    empty = false
 }) {
+    if (empty) {
+        return <div className="h-full w-full">No Book Selected</div>;
+    }
+
     return (
         <div
             onClick={onClick}

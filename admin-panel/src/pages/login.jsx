@@ -2,7 +2,6 @@ import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import people_cropped from "@/assets/people-cropped.jpg";
-import logo_sti from "@/assets/logo/sti.svg";
 import { useState } from "react";
 import { useSetAtom } from "jotai";
 import { sessionAtom } from "../Store";
@@ -53,7 +52,7 @@ export default function LoginRegister() {
                     <div className="bg-black-overlay w-3/4"></div>
                 </div>
                 <div className="flex w-1/4 flex-col items-center justify-center bg-[#fff200] p-4 align-middle">
-                    <img src={logo_sti} alt=" " className="mb-12 w-2/4" />
+                    <img src="/logo/sti.svg" alt=" " className="mb-12 w-2/4" />
                     <h1 className="mb-12 text-2xl font-bold text-blue-500">
                         A.L.I.S Login
                     </h1>

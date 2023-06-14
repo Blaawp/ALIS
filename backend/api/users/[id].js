@@ -4,7 +4,7 @@ import { ZodError, z } from "zod";
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
-            const inputSchema = z.number().min(0);
+            const inputSchema = z.number().min(1);
             const parsed = inputSchema.parse(parseInt(req.query["id"]));
             const user = await findUser({ id: parsed, limit: 1 });
             res.status(200).json(user);
