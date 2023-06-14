@@ -65,7 +65,12 @@ export const router = createBrowserRouter([
     {
         path: "/borrowing",
         element: (
-            <ProtectedRoute>
+            <ProtectedRoute
+                to="/dashboard"
+                cannotAccess={({ session }) =>
+                    !session || session.user.role !== 1
+                }
+            >
                 <Borrowing />
             </ProtectedRoute>
         )
