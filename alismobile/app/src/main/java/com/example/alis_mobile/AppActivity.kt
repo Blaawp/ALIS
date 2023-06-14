@@ -1,6 +1,7 @@
 package com.example.alis_mobile
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.graphics.Color
 
@@ -16,6 +17,7 @@ import android.widget.TextView
 
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import com.example.alis_mobile.session.Session
 
 
 class AppActivity : ComponentActivity() {
@@ -40,7 +42,7 @@ class AppActivity : ComponentActivity() {
         val selectExplore = findViewById<View>(R.id.selectExplore)
         val selectBook = findViewById<View>(R.id.selectBook)
 
-        var profileScreen: View? = null
+        var profileScreen: View? = inflater.inflate(R.layout.profile_screen, null)
         val selectHamburger = findViewById<View>(R.id.hamburger)
 
 
@@ -48,7 +50,6 @@ class AppActivity : ComponentActivity() {
 
         selectHamburger.setOnClickListener {
             selectHamburger.isClickable = false
-            profileScreen = inflater.inflate(R.layout.profile_screen, null)
             // Set the initial position of the profileLayout outside the left edge of the screen
             profileScreen?.let { screen ->
                 screen.translationX = -(screen.width.toFloat())
@@ -146,6 +147,34 @@ class AppActivity : ComponentActivity() {
                 }
             }
         }
+
+        profileScreen?.let {
+            updateProfileTexts(it)
+            val logoutButton = it.findViewById<Button>(R.id.log_out_btn)
+            logoutButton.setOnClickListener {
+                Session.getInstance().logout()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+    }
+
+    private fun updateProfileTexts(profileView: View){
+
+        val nameField = profileView.findViewById<TextView>(R.id.input_name)
+        val accNumberField = profileView.findViewById<TextView>(R.id.account_number)
+        val courseField = profileView.findViewById<TextView>(R.id.course)
+        val numberField = profileView.findViewById<TextView>(R.id.number)
+        val emailField = profileView.findViewById<TextView>(R.id.textView12)
+
+        val user = Session.getInstance().user
+
+        nameField.text = "${user?.optString("first_name") ?: "Null"} ${user?.optString("middle_name") ?: "Null"} ${user?.optString("last_name") ?: "Null"}"
+        accNumberField.text = user?.optString("id") ?: "Null"
+        courseField.text = "Wala pang course field sa DB"
+        numberField.text = "Wala pang number field sa DB"
+        emailField.text = user?.optString("email") ?: "Null"
     }
 
     private fun setClickListeners() {
