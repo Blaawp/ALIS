@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SidePanel from "@/components/SidePanel";
 import { BiUpload } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AddAccount() {
     const [accno, setAccNo] = useState("");
