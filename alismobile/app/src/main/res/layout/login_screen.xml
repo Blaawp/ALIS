@@ -55,16 +55,31 @@
                     android:textSize="18sp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="-3dp"/>
-
-                <EditText
-                    android:id="@+id/etUsername"
-                    android:layout_width="match_parent"
+                <LinearLayout
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edittextbg"
-                    android:hint="Username"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:padding="4dp" />
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="40"
+                        android:background="@drawable/edittextbgusername"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        android:padding="4dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="60"
+                        android:gravity="center_vertical"
+                        android:text="@caloocan.edu.ph"
+                        android:background="@drawable/edittextbgusername2"
+                        android:textSize="15sp"
+                        android:minHeight="48dp"
+                        android:padding="4dp" />
+                </LinearLayout>
 
                 <!-- Password Input -->
                 <TextView
@@ -150,6 +165,7 @@
             android:layout_width="200dp"
             android:layout_height="160dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/sticaloocan2"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

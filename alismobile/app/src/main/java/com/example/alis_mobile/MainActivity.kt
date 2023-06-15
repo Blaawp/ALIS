@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         loginButton = findViewById(R.id.btnLogin)
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
+            val username = usernameEditText.text.toString() + "@sti.edu.ph"
             val password = passwordEditText.text.toString()
 
             placeholderLogin(username, password)

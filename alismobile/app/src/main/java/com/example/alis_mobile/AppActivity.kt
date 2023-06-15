@@ -112,6 +112,40 @@ class AppActivity : ComponentActivity() {
             currLayout.addView(newView)
 
             currSect.text = "Cataloging"
+
+            val searchButton = findViewById<ImageView>(R.id.search_icon_searched_screen)
+            searchButton.setOnClickListener {
+                currLayout.removeAllViews()
+                val newView = inflater.inflate(R.layout.searched_screen, currLayout, false)
+                currLayout.addView(newView)
+
+                val bookClick =
+                    newView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
+                bookClick.setOnClickListener {
+                    currLayout.removeAllViews()
+                    val newView =
+                        inflater.inflate(R.layout.book_information_availability, currLayout, false)
+                    currLayout.addView(newView)
+
+                    val bckButton =
+                        newView.findViewById<Button>(R.id.back_btn_book_information_availability)
+                    val naviButton =
+                        newView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
+
+                    bckButton.setOnClickListener {
+                        currLayout.removeAllViews()
+                        setClickListeners()
+                    }
+
+                    naviButton.setOnClickListener {
+                        currSect.text = "Navigation"
+                        currLayout.removeAllViews()
+                        val navigateView =
+                            inflater.inflate(R.layout.navigate_screen, currLayout, false)
+                        currLayout.addView(navigateView)
+                    }
+                }
+            }
         }
 
         // BOOK MENU BRANCH
@@ -121,33 +155,15 @@ class AppActivity : ComponentActivity() {
             selectExplore.setBackgroundColor(Color.TRANSPARENT)
             selectBook.setBackgroundColor(selected)
             currLayout.removeAllViews()
-            val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
-            currLayout.addView(searchedView)
+            val bookTransactView =
+                inflater.inflate(R.layout.book_transaction_screen, currLayout, false)
+            currLayout.addView(bookTransactView)
 
             currSect.text = "Book Transaction"
 
-            val bookClick = searchedView.findViewById<ConstraintLayout>(R.id.book_card_circulation_screen)
-            bookClick.setOnClickListener {
-                currLayout.removeAllViews()
-                val newView = inflater.inflate(R.layout.book_information_availability, currLayout, false)
-                currLayout.addView(newView)
-
-                val bckButton = newView.findViewById<Button>(R.id.back_btn_book_information_availability)
-                val naviButton = newView.findViewById<Button>(R.id.navigate_btn_book_information_availability)
-
-                bckButton.setOnClickListener {
-                    currLayout.removeAllViews()
-                    setClickListeners()
-                }
-
-                naviButton.setOnClickListener {
-                    currSect.text = "Navigation"
-                    currLayout.removeAllViews()
-                    val navigateView = inflater.inflate(R.layout.navigate_screen, currLayout, false)
-                    currLayout.addView(navigateView)
-                }
-            }
         }
+
+
 
         profileScreen?.let {
             updateProfileTexts(it)
@@ -198,8 +214,7 @@ class AppActivity : ComponentActivity() {
 
             bckButton.setOnClickListener {
                 currLayout.removeAllViews()
-                val searchedView = inflater.inflate(R.layout.searched_screen, currLayout, false)
-                currLayout.addView(searchedView)
+                setClickListeners()
             }
 
             naviButton.setOnClickListener {

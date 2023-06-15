@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#F0EEEE">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="313dp"
         android:layout_height="185dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corner_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +91,7 @@
         android:layout_width="290dp"
         android:layout_height="260dp"
         android:layout_marginTop="10dp"
+
         android:background="@drawable/rounded_corner_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -165,7 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Loan Period&quot;"
+            android:text="Loan Period:"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/shelfnum_heading_book_information_availability"
             app:layout_constraintTop_toBottomOf="@+id/shelfnum_heading_book_information_availability" />
@@ -206,28 +207,35 @@
             app:layout_constraintStart_toStartOf="@+id/shelfnum__book_information_availability"
             app:layout_constraintTop_toBottomOf="@+id/shelfnum__book_information_availability" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/gapbottom"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout7"/>
 
     <Button
         android:id="@+id/back_btn_book_information_availability"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:background="#006EB4"
+        android:layout_marginStart="100dp"
+
         android:text="BACK"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+        app:layout_constraintTop_toBottomOf="@+id/gapbottom" />
 
     <Button
         android:id="@+id/navigate_btn_book_information_availability"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
         android:background="#006EB4"
         android:text="NAVIGATE"
         android:textColor="#FFFFFF"
+        android:layout_marginEnd="100dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+        app:layout_constraintTop_toBottomOf="@+id/gapbottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>
