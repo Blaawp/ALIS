@@ -14,7 +14,7 @@ export default function SidePanel() {
     const setSession = useSetAtom(sessionAtom);
 
     return (
-        <div className="flex bg-white flex-col h-4/5 w-1/4 text-2xl font-bold text-[#062c45] pt-16">
+        <div className="flex bg-white flex-col h-screen mb-32 w-1/4 text-xl font-bold text-[#062c45] py-5">
             <Link
                 to="/dashboard"
                 className={`flex flex-row h-16 items-center ${
