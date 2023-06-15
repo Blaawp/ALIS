@@ -28,7 +28,10 @@ export default function LoginRegister() {
             ).json();
             setSession(res);
             console.log(res);
-            navigate("/dashboard");
+            if (res.user.role == 3)
+                navigate('/home');
+            else
+                navigate("/dashboard");
         } catch (e) {
         } finally {
         }

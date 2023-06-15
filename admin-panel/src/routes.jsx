@@ -3,8 +3,7 @@ import Dashboard from "./pages/dashboard";
 import Inventory from "./pages/inventory";
 import Archives from "./pages/archives";
 import Borrowing from "./pages/borrowing";
-import DueDates from "./pages/duedates";
-import Notification from "./pages/notification";
+import Home from "./pages/home";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 
@@ -65,23 +64,23 @@ export const router = createBrowserRouter([
     {
         path: "/borrowing",
         element: (
-            <ProtectedRoute
-                to="/dashboard"
-                cannotAccess={({ session }) =>
-                    !session || session.user.role !== 1
-                }
-            >
-                <Borrowing />
-            </ProtectedRoute>
+            // <ProtectedRoute
+            //     to="/dashboard"
+            //     cannotAccess={({ session }) =>
+            //         !session || session.user.role !== 1
+            //     }
+            // >
+            <Borrowing />
+            // </ProtectedRoute>
         )
-    }
-    // {
-    //     path: "/duedates",
-    //     element: <DueDates />
-    // },
+    },
 
-    // {
-    //     path: "/notification",
-    //     element: <Notification />
-    // }
+
+    {
+        path: "/home",
+        element: (
+            <Home />
+        )
+    },
+
 ]);

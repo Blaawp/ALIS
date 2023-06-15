@@ -4,7 +4,7 @@ export default function BorrowCard({
     title,
     author,
     category,
-    img,
+    img = "/books/book1.jpg",
     borrow_date,
     status_name = null,
     onClick = null,
@@ -17,7 +17,7 @@ export default function BorrowCard({
     return (
         <div className="grid grid-cols-4 h-32 p-2 flex flex-row w-full rounded-md bg-white text-black my-3">
             <div className="flex flex-rows">
-                <img className="w-1/4 object-cover" src={'/books/book1.jpg'} alt=" " /> 
+                <img className="w-1/4 object-cover" src={img} alt=" " /> 
                 <div className="ml-5 my-auto flex flex-col">
                     <p className="text-l font-bold">{title}</p> 
                     <p className="mt-5 text-s font-semibold">{author}</p>

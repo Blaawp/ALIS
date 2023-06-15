@@ -5,8 +5,6 @@ import { books } from "@/data/books";
 import SearchBar from "@/components/SearchBar";
 import { Link } from "react-router-dom";
 import { BiBookAdd } from "react-icons/bi";
-import { notifications } from "@/data/notifications";
-import NotificationList from "@/components/NotificationList";
 import BorrowCard from "@/components/BorrowCard";
 import { useEffect, useState } from "react";
 
@@ -26,7 +24,7 @@ export default function Dashboard() {
                 setBorrows(res)
             } catch (e) {
                 console.error(e);
-            }   
+            }
         };
 
         fetchBorrows();
@@ -73,9 +71,9 @@ export default function Dashboard() {
                             </div>
                         </div>
                         {/* <div className="grid grid-cols-4"> */}
-                            {borrows.slice(0, 5).map((book, i) => (
-                                <BorrowCard {...book} key={i} />
-                            ))}
+                        {borrows.map((book, i) => (
+                            <BorrowCard {...book} key={i} />
+                        ))}
                         {/* </div> */}
                     </div>
                 </div>
