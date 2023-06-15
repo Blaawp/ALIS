@@ -209,7 +209,12 @@ export const addBorrowTransaction = async ({
         [latestTransactionId]
     );
     conn.close();
-    return insertedTransactions[0];
+    return {
+        borrowTransaction: insertedTransactions[0],
+        user,
+        book,
+        librarian
+    };
 };
 
 export const returnBook = async ({ borrowTransactionId, librarianId }) => {
