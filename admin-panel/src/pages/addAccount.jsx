@@ -1,14 +1,18 @@
 import Navigation from "@/components/Navigation";
 import SidePanel from "@/components/SidePanel";
 import { BiUpload } from "react-icons/bi";
+import { CgFileDocument } from "react-icons/cg";
 import { useState, useEffect } from "react";
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function AddAccount() {
-    const [accno, setAccNo] = useState("");
-    const [username, setUsername] = useState("");
+    const [fname, setFname] = useState("");
+    const [mname, setMname] = useState("");
+    const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
-    const [userStatus, setUserStatus] = useState("");
-    const [userNumber, setUserNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
 
     const submitAccount = async (e) => {
         e.preventDefault();
@@ -36,9 +40,12 @@ export default function AddAccount() {
                 <div className="flex h-full w-full flex-col">
                     <div className="flex flex-row">
                         <div className="w-full px-16">
-                            <p className="pb-5 pl-10 mt-12  text-2xl font-bold">
-                                New Account
-                            </p>
+                            <div className="flex flex-row justify-content">
+                                <p className="pb-5 pl-10 mt-12  text-2xl font-bold">
+                                    New Account
+                                </p>
+                                <CgFileDocument />
+                            </div>
                             <form
                                 method="post"
                                 className="flex flex-col"
@@ -48,10 +55,10 @@ export default function AddAccount() {
                                     <div className="flex flex-col w-3/5 text-right space-y-4">
                                         <div className="flex flex-row pt-10">
                                             <label className="w-1/2 pr-7">
-                                                Account Number:
+                                                First Name:
                                             </label>
                                             <input className="h-10 w-full p-5 rounded-lg" type="text"
-                                                value={accno}
+                                                value={fname}
                                                 onChange={(e) =>
                                                     setAccNo(e.target.value)
                                                 } required />
@@ -59,10 +66,10 @@ export default function AddAccount() {
 
                                         <div className="flex flex">
                                             <label className="w-1/2 pr-7">
-                                                Username:
+                                                Middle Name:
                                             </label>
                                             <input className="h-10 w-full p-5 rounded-lg" type="text"
-                                                value={username}
+                                                value={mname}
                                                 onChange={(e) =>
                                                     setUsername(e.target.value)
                                                 } required />
@@ -70,10 +77,10 @@ export default function AddAccount() {
 
                                         <div className="flex flex">
                                             <label className="w-1/2 pr-7">
-                                                Email:
+                                                Last Name:
                                             </label>
                                             <input className="h-10 w-full p-5 rounded-lg" type="text"
-                                                value={email}
+                                                value={lname}
                                                 onChange={(e) =>
                                                     setEmail(e.target.value)
                                                 } required />
@@ -81,10 +88,10 @@ export default function AddAccount() {
 
                                         <div className="flex flex">
                                             <label className="w-1/2 pr-7">
-                                                Status:
+                                                E-mail:
                                             </label>
                                             <input className="h-10 w-full p-5 rounded-lg" type="text"
-                                                value={userStatus}
+                                                value={email}
                                                 onChange={(e) =>
                                                     setUserStatus(e.target.value)
                                                 } required />
@@ -92,13 +99,29 @@ export default function AddAccount() {
 
                                         <div className="flex flex">
                                             <label className="w-1/2 pr-7">
-                                                Number:
+                                                Password:
                                             </label>
                                             <input className="h-10 w-full p-5 rounded-lg" type="text"
-                                                value={userNumber}
+                                                value={password}
                                                 onChange={(e) =>
                                                     setUserNumber(e.target.value)
                                                 } required />
+                                        </div>
+
+                                        <div className="flex flex">
+                                            <label className="w-1/2 pr-7">
+                                                Role:
+                                            </label>
+                                            <Select
+                                                className="mb-4"
+                                                value={role}
+                                                onChange={(e) =>
+                                                    setRole(e.target.value)
+                                                }
+                                            >
+                                                <MenuItem value="Teacher">Teacher</MenuItem>
+                                                <MenuItem value="Student">Student</MenuItem>
+                                            </Select>
                                         </div>
 
                                     </div>

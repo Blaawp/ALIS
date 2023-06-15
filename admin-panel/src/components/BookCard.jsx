@@ -44,7 +44,10 @@ export default function BookCard({
                 )}
                 {
                     isInventory ?
-                        <button>asdasd</button>
+                        <div className="flex flex-row space-x-4 font-semibold justify-end mt-5">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
                         :
                         <></>
                 }
