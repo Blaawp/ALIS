@@ -3,6 +3,7 @@ import Dashboard from "./pages/dashboard";
 import Inventory from "./pages/inventory";
 import Archives from "./pages/archives";
 import Borrowing from "./pages/borrowing";
+import AddBook from "./pages/addBook";
 import Home from "./pages/home";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
@@ -71,6 +72,20 @@ export const router = createBrowserRouter([
             //     }
             // >
             <Borrowing />
+            // </ProtectedRoute>
+        )
+    },
+
+    {
+        path: "/addBook",
+        element: (
+            // <ProtectedRoute
+            //     to="/dashboard"
+            //     cannotAccess={({ session }) =>
+            //         !session || session.user.role !== 1
+            //     }
+            // >
+            <AddBook />
             // </ProtectedRoute>
         )
     },

@@ -26,11 +26,10 @@ export default function BigBookCard({
                     <div className="mb-4 flex flex-row justify-between">
                         <p className="text-xl font-bold">Status:</p>
                         <p
-                            className={`text-xl font-bold ${
-                                status === "Borrowed"
+                            className={`text-xl font-bold ${status === "Borrowed"
                                     ? "text-red-500"
                                     : "text-green-500"
-                            }`}
+                                }`}
                         >
                             {status}
                         </p>
