@@ -16,7 +16,7 @@ export default async function handler(req, res) {
             return;
         } catch (e) {
             console.error(e);
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
@@ -33,7 +33,9 @@ export default async function handler(req, res) {
             const parsed = InputSchema.parse(JSON.parse(req.body));
 
             if (moment(parsed.borrowDate) >= moment(parsed.dueDate)) {
-                return res.status(400).end();
+                return res.status(400).json({
+                    msg: "Due Date is less than or equal to borrow date"
+                });
             }
 
             const newRecord = await addBorrowTransaction(parsed);
@@ -47,14 +49,14 @@ export default async function handler(req, res) {
                 e instanceof SyntaxError ||
                 e instanceof NotEnoughBooks
             ) {
-                res.status(400).end();
+                res.status(400).json({ msg: e.message });
                 return;
             }
 
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }

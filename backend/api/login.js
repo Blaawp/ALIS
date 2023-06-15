@@ -13,7 +13,7 @@ export default async function handler(req, res) {
             const parsed = InputSchema.parse(req.body);
             let user = await loginUser(parsed);
             if (!user) {
-                res.status(400).end();
+                res.status(400).json({ msg: "No User Found" });
                 return;
             }
             const generatedToken = jwt.sign(user, process.env.JWT_SECRET, {
@@ -27,14 +27,14 @@ export default async function handler(req, res) {
             console.error(e);
 
             if (e instanceof ZodError || e instanceof SyntaxError) {
-                res.status(400).end();
+                res.status(400).json({ msg: e.message });
                 return;
             }
 
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }

@@ -11,14 +11,14 @@ export default async function handler(req, res) {
             return;
         } catch (e) {
             if (e instanceof ZodError) {
-                res.status(400).end();
+                res.status(400).json({ msg: e.message });
                 return;
             }
 
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }

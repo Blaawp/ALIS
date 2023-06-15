@@ -18,7 +18,7 @@ export default function borrowing() {
     const [barcode, setBarcode] = useState("");
     const [debouncedValue] = useDebounce(barcode, 500);
     const [displayedBook, setDisplayedBook] = useState(null);
-    const [dueDate, setDueDate] = useState(dayjs().add(7, 'day'));
+    const [dueDate, setDueDate] = useState(dayjs().add(7, "day"));
     const [borrowDate, setBorrowDate] = useState(dayjs());
     const [userId, setUserId] = useState("");
     const [borrowRes, setBorrowRes] = useState(null);
@@ -27,15 +27,8 @@ export default function borrowing() {
 
     const submitBorrow = async (e) => {
         e.preventDefault();
-        // console.log({
-        //     bookBarcode: parseInt(barcode),
-        //     userId,
-        //     librarianId: session.user.id,
-        //     dueDate,
-        //     borrowDate
-        // })
-        let res = await (
-            await fetch(
+        try {
+            let unparsed = await fetch(
                 import.meta.env.VITE_API_URL + "/api/borrow_transactions",
                 {
                     method: "POST",
@@ -47,17 +40,23 @@ export default function borrowing() {
                         borrowDate
                     })
                 }
-            )
-        ).json();
+            );
 
-        setBorrowRes(res);
-        console.log("gep", res);
+            let res = await unparsed.json();
 
-        setBarcode("");
-        setDueDate(dayjs().add(7, 'day'));
-        setBorrowDate(dayjs())
-        setUserId("")
-        alert("Book Borrowed")
+            console.log(res);
+            if (unparsed.status !== 200) {
+                return;
+            }
+
+            setBorrowRes(res);
+
+            setBarcode("");
+            setDueDate(dayjs().add(7, "day"));
+            setBorrowDate(dayjs());
+            setUserId("");
+            alert("Book Borrowed");
+        } catch (e) {}
     };
 
     useEffect(() => {
@@ -197,35 +196,53 @@ export default function borrowing() {
                         </div>
                         <div className="flex flex-col h-full w-2/5 px-6">
                             <div className="bg-[#d9d9d9] mx-auto mt-24 h-1/2 w-full pt-6">
-                                {
-                                    borrowRes !== null ?
-                                        <div className="bg-[#fdfdfd] h-content w-4/5 rounded-lg flex flex-col m-auto p-2">
-                                            <div>Student No: {borrowRes.user.id}</div>
-                                            <div>Name: {borrowRes.user.first_name + " " + borrowRes.user.last_name}</div>
-                                            <div>Date Borrowed: {dayjs(borrowRes.borrowTransaction.created_at).format('MMMM DD, YYYY')}</div>
-                                            <div>Due Date: {dayjs(borrowRes.borrowTransaction.due_date).format('MMMM DD, YYYY')}</div>
-                                            <BookCard
-                                                {...displayedBook}
-                                                empty={!displayedBook}
-                                                withStatus={true}
-                                                status={'Borrowed'}
-                                            />
+                                {borrowRes !== null ? (
+                                    <div className="bg-[#fdfdfd] h-content w-4/5 rounded-lg flex flex-col m-auto p-2">
+                                        <div>
+                                            Student No: {borrowRes.user.id}
                                         </div>
-                                        :
-                                        <></>
-                                }
-                            </div>
-                            {
-                                borrowRes !== null ?
-                                    <button onClick={() => setBorrowRes(null)} className="mx-auto mt-6 h-8 w-32 rounded-xl bg-[#006eb7] text-white hover:bg-blue-800">
-                                        New Transaction
-                                    </button>
-                                    :
+                                        <div>
+                                            Name:{" "}
+                                            {borrowRes.user.first_name +
+                                                " " +
+                                                borrowRes.user.last_name}
+                                        </div>
+                                        <div>
+                                            Date Borrowed:{" "}
+                                            {dayjs(
+                                                borrowRes.borrowTransaction
+                                                    .created_at
+                                            ).format("MMMM DD, YYYY")}
+                                        </div>
+                                        <div>
+                                            Due Date:{" "}
+                                            {dayjs(
+                                                borrowRes.borrowTransaction
+                                                    .due_date
+                                            ).format("MMMM DD, YYYY")}
+                                        </div>
+                                        <BookCard
+                                            {...displayedBook}
+                                            empty={!displayedBook}
+                                            withStatus={true}
+                                            status={"Borrowed"}
+                                        />
+                                    </div>
+                                ) : (
                                     <></>
-                            }
+                                )}
+                            </div>
+                            {borrowRes !== null ? (
+                                <button
+                                    onClick={() => setBorrowRes(null)}
+                                    className="mx-auto mt-6 h-8 w-32 rounded-xl bg-[#006eb7] text-white hover:bg-blue-800"
+                                >
+                                    New Transaction
+                                </button>
+                            ) : (
+                                <></>
+                            )}
                         </div>
-
-
                     </div>
                 </div>
             </div>
