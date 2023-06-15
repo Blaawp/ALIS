@@ -4,6 +4,7 @@ import Inventory from "./pages/inventory";
 import Archives from "./pages/archives";
 import Borrowing from "./pages/borrowing";
 import AddBook from "./pages/addBook";
+import AddAccount from "./pages/addAccount";
 import Home from "./pages/home";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
@@ -49,7 +50,7 @@ export const router = createBrowserRouter([
         path: "/addAccount",
         element: (
             <ProtectedRoute>
-                <Inventory />
+                <AddAccount />
             </ProtectedRoute>
         )
     },

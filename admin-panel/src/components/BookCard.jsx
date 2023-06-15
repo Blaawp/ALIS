@@ -7,7 +7,8 @@ export default function BookCard({
     status = null,
     onClick = null,
     empty = false,
-    withStatus = false
+    withStatus = false,
+    isInventory = false
 }) {
     if (empty) {
         return <div className="h-full w-full text-lg font-semibold "></div>;
@@ -30,17 +31,24 @@ export default function BookCard({
                 <p className="mb-4 text-xs">{synopsis}</p>
                 {!!status && withStatus && (
                     <div className="flex flex-row justify-between">
-                        <p className="text-xl font-bold"></p>
+                        <p className="text-lg font-bold">{isInventory ? "Status: " : ""}</p>
                         <p
-                            className={`text-xl font-bold ${status === "Borrowed"
-                                    ? "text-red-500"
-                                    : "text-green-500"
+                            className={`text-lg font-bold ${status === "Borrowed"
+                                ? "text-red-500"
+                                : "text-green-500"
                                 }`}
                         >
                             {status}
                         </p>
                     </div>
                 )}
+                {
+                    isInventory ?
+                        <button>asdasd</button>
+                        :
+                        <></>
+                }
+
             </div>
         </div>
     );

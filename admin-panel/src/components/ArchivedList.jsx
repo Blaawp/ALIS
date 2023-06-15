@@ -1,3 +1,5 @@
+import { CgInbox } from "react-icons/cg";
+
 export default function ArchivedList({
     genre,
     status,
@@ -11,7 +13,7 @@ export default function ArchivedList({
         "Available": "text-green-500",
         "Archived": "text-gray-500"
     }
-    
+
     if (!status) {
         return <></>;
     }
@@ -24,9 +26,9 @@ export default function ArchivedList({
                     <div className="ml-4 flex w-3/4 flex-col">
                         <div className="flex flex-row items-center justify-between">
                             <p className="text-xl">{title}</p>
-                            <p className="rounded-full bg-[#4c3feb] px-4 text-center align-middle text-white">
+                            {/* <p className="rounded-full bg-[#4c3feb] px-4 text-center align-middle text-white">
                                 {genre}
-                            </p>
+                            </p> */}
                         </div>
                         <p className="mb-2 text-sm">{author}</p>
                     </div>
@@ -36,11 +38,14 @@ export default function ArchivedList({
             <div className="flex w-full flex-row items-center justify-center bg-white align-middle">
                 <p className="text-xl font-bold">{genre}</p>
             </div>
-            
-            <div className="flex w-full flex-row items-center justify-center bg-white align-middle">
+
+            <div className="relative flex w-full flex-col items-center justify-center bg-white align-middle">
                 <p className={`text-xl font-bold ${statusColor[status]}`}>
                     {status}
                 </p>
+                <button className="absolute end-2 bottom-2" >
+                    <CgInbox color="black" size={30} />
+                </button>
             </div>
         </>
     );

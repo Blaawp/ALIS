@@ -71,8 +71,8 @@ export default function Inventory() {
                     </div>
 
                     <div className="flex flex-row justify-between w-5/6">
-                        <h1 className="text-lg font-bold">
-                            Total Books:
+                        <h1 className="text-lg font-bold flex">
+                            Total Books:  <p className="text-red-500 ml-2"> 5,000 </p>
                         </h1>
                         <Link to="/addBook">
                             <BsFillPlusSquareFill color="black" size="40px" />
@@ -87,6 +87,8 @@ export default function Inventory() {
                                 onClick={() => {
                                     setSelectedBook(book);
                                 }}
+                                withStatus={true}
+                                isInventory={true}
                             />
                         ))}
                     </div>
