@@ -10,6 +10,8 @@ import Home from "./pages/home";
 import Transactions from "./pages/transactions";
 import Reports from "./pages/reports";
 import UserInfo from "./pages/userInfo";
+import Circulation from "./pages/circulation";
+import Cataloging from "./pages/cataloging";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 
@@ -117,7 +119,25 @@ export const router = createBrowserRouter([
     {
         path: "/home",
         element: (
-            <Home />
+            <ProtectedRoute>
+                <Home />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/circulation",
+        element: (
+            <ProtectedRoute>
+                <Circulation />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/cataloging",
+        element: (
+            <ProtectedRoute>
+                <Cataloging />
+            </ProtectedRoute>
         )
     },
 

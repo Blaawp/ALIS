@@ -20,8 +20,8 @@ export default function SidePanel() {
                 session != null && session.user.role == 3 ?
                     <div>
                         <Link
-                            to="/dashboard"
-                            className={`flex flex-row h-16 items-center ${pathname === "/dashboard"
+                            to="/home"
+                            className={`flex flex-row h-16 items-center ${pathname === "/home"
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}
@@ -30,8 +30,8 @@ export default function SidePanel() {
                             Home
                         </Link>
                         <Link
-                            to="/inventory"
-                            className={`flex flex-row h-16 items-center ${pathname === "/inventory"
+                            to="/circulation"
+                            className={`flex flex-row h-16 items-center ${pathname === "/circulation"
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}
@@ -40,8 +40,8 @@ export default function SidePanel() {
                             Circulation
                         </Link>
                         <Link
-                            to="/archives"
-                            className={`flex flex-row h-16 items-center ${pathname === "/archives"
+                            to="/cataloging"
+                            className={`flex flex-row h-16 items-center ${pathname === "/cataloging"
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}

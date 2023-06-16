@@ -20,7 +20,7 @@ export default function UserInfo() {
                         <div className="pl-16 w-full text-left">Number:</div>
                         <div className="pl-16 w-full text-left">Email:</div>
                         <div className="w-full text-center pt-8">STI COLLEGE CALOOCAN</div>
-                        <hr className="w-5/6 h-1 mx-auto bg-yellow-300"></hr>
+                        <hr className="w-5/6 h-0.5 mx-auto bg-yellow-300"></hr>
                     </div>
                 </div>
             </div>
