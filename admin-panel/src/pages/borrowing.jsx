@@ -56,7 +56,7 @@ export default function borrowing() {
             setBorrowDate(dayjs());
             setUserId("");
             alert("Book Borrowed");
-        } catch (e) {}
+        } catch (e) { }
     };
 
     useEffect(() => {

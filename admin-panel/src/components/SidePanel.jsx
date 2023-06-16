@@ -64,7 +64,7 @@ export default function SidePanel() {
                         </Link>
                         <Link
                             to="/inventory"
-                            className={`flex flex-row h-16 items-center ${pathname === "/inventory"
+                            className={`flex flex-row h-16 items-center ${pathname === "/inventory" || pathname === "/addBook"
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}
@@ -94,7 +94,7 @@ export default function SidePanel() {
                         </Link>
                         <Link
                             to="/addAccount"
-                            className={`flex flex-row h-16 items-center ${pathname === "/addAccount"
+                            className={`flex flex-row h-16 items-center ${pathname === "/addAccount" || pathname === "/accounts"
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}

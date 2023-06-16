@@ -5,7 +5,11 @@ import Archives from "./pages/archives";
 import Borrowing from "./pages/borrowing";
 import AddBook from "./pages/addBook";
 import AddAccount from "./pages/addAccount";
+import Accounts from "./pages/accounts";
 import Home from "./pages/home";
+import Transactions from "./pages/transactions";
+import Reports from "./pages/reports";
+import UserInfo from "./pages/userInfo";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 
@@ -42,7 +46,7 @@ export const router = createBrowserRouter([
         path: "/transactions",
         element: (
             <ProtectedRoute>
-                <Inventory />
+                <Transactions />
             </ProtectedRoute>
         )
     },
@@ -58,7 +62,7 @@ export const router = createBrowserRouter([
         path: "/reports",
         element: (
             <ProtectedRoute>
-                <Inventory />
+                <Reports />
             </ProtectedRoute>
         )
     },
@@ -66,28 +70,46 @@ export const router = createBrowserRouter([
     {
         path: "/borrowing",
         element: (
-            // <ProtectedRoute
-            //     to="/dashboard"
-            //     cannotAccess={({ session }) =>
-            //         !session || session.user.role !== 1
-            //     }
-            // >
-            <Borrowing />
-            // </ProtectedRoute>
+            <ProtectedRoute
+                to="/dashboard"
+                cannotAccess={({ session }) =>
+                    !session || session.user.role !== 1
+                }
+            >
+                <Borrowing />
+            </ProtectedRoute>
         )
     },
 
     {
         path: "/addBook",
         element: (
-            // <ProtectedRoute
-            //     to="/dashboard"
-            //     cannotAccess={({ session }) =>
-            //         !session || session.user.role !== 1
-            //     }
-            // >
-            <AddBook />
-            // </ProtectedRoute>
+            <ProtectedRoute
+                to="/dashboard"
+                cannotAccess={({ session }) =>
+                    !session || session.user.role !== 1
+                }
+            >
+                <AddBook />
+            </ProtectedRoute>
+        )
+    },
+
+    {
+        path: "/accounts",
+        element: (
+            <ProtectedRoute>
+                <Accounts />
+            </ProtectedRoute>
+        )
+    },
+
+    {
+        path: "/userInfo",
+        element: (
+            <ProtectedRoute>
+                <UserInfo />
+            </ProtectedRoute>
         )
     },
 

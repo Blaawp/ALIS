@@ -5,6 +5,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { useState, useEffect } from "react";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
 export default function AddAccount() {
     const [fname, setFname] = useState("");
@@ -48,17 +49,20 @@ export default function AddAccount() {
                 <div className="flex h-full w-full flex-col">
                     <div className="flex flex-row">
                         <div className="w-full px-16">
-                            <div className="flex flex-row justify-content">
+                            <div className="flex flex-row justify-between">
                                 <p className="pb-5 pl-10 mt-12  text-2xl font-bold">
                                     New Account
                                 </p>
-                                <CgFileDocument />
+                                <Link to="/accounts" className="flex flex-row" >
+                                    <CgFileDocument size={30} />
+                                    <p className="ml-2 font-bold text-xl">Participants</p>
+                                </Link>
                             </div>
                             <form method="post" className="flex flex-col">
-                                <div className="flex flex-row h-full w-full bg-[#d9d9d9] font-bold">
+                                <div className="flex flex-row h-full w-full bg-[#d9d9d9]">
                                     <div className="flex flex-col w-3/5 text-right space-y-4">
                                         <div className="flex flex-row pt-10">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 First Name:
                                             </label>
                                             <input
@@ -73,7 +77,7 @@ export default function AddAccount() {
                                         </div>
 
                                         <div className="flex">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 Middle Name:
                                             </label>
                                             <input
@@ -88,7 +92,7 @@ export default function AddAccount() {
                                         </div>
 
                                         <div className="flex">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 Last Name:
                                             </label>
                                             <input
@@ -103,7 +107,7 @@ export default function AddAccount() {
                                         </div>
 
                                         <div className="flex">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 E-mail:
                                             </label>
                                             <input
@@ -118,7 +122,7 @@ export default function AddAccount() {
                                         </div>
 
                                         <div className="flex">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 Password:
                                             </label>
                                             <input
@@ -133,11 +137,11 @@ export default function AddAccount() {
                                         </div>
 
                                         <div className="flex">
-                                            <label className="w-1/2 pr-7">
+                                            <label className="w-1/2 pr-7 font-bold">
                                                 Role:
                                             </label>
                                             <Select
-                                                className="mb-4"
+                                                className="mb-4 h-10 w-full p-5 rounded-lg bg-white"
                                                 value={role}
                                                 onChange={(e) =>
                                                     setRole(e.target.value)
@@ -154,7 +158,7 @@ export default function AddAccount() {
                                     </div>
 
                                     <div className="w-2/5 m-14 pl-20">
-                                        <label className="w-1/2 pr-7">
+                                        <label className="w-1/2 pr-7 font-bold">
                                             Image:
                                         </label>
                                         <button className="ml-5 h-56 w-56 bg-white flex flex-col">
