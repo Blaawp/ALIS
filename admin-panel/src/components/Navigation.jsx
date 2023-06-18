@@ -18,10 +18,10 @@ export default function Navigation() {
 
             </div>
             <div className="flex w-2/12 flex-row items-center justify-evenly">
-                <Link to="/userInfo">
+                <Link to="/userInfo" className="flex flex-row space-x-4">
                     <FaUserCircle color="white" size="30px" />
+                    <p className="text-xl text-white font-bold">{session != null ? session.user.role == 3 ? "Student" : "Admin" : "error"}</p>
                 </Link>
-                <p className="text-xl text-white font-bold">{session != null ? session.user.role == 3 ? "Student" : "Admin" : "error"}</p>
                 <Link to="/" onClick={() => setSession(null)}>
                     <RiLogoutBoxRLine color="white" size="30px" />
                 </Link>

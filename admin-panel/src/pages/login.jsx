@@ -97,9 +97,9 @@ export default function LoginRegister() {
                     <p className="mb-2 text-sm text-black">
                         Don't have an account?
                     </p>
-                    <button className="mb-12 w-3/4 rounded border-2 border-blue-500 p-2 font-bold text-blue-500">
+                    {/* <button className="mb-12 w-3/4 rounded border-2 border-blue-500 p-2 font-bold text-blue-500">
                         SIGN UP
-                    </button>
+                    </button> */}
                     <p className="text-sm text-black">©2023 ALIS, Wala </p>
                 </div>
             </div>

@@ -17,7 +17,8 @@ export default function ReportList({
     let bgColor = {
         "Returned": "bg-gray-300",
         "Borrowed": "bg-white",
-        "Exceeded": "bg-gray-300"
+        "Exceeded": "bg-gray-300",
+        "Lost": "bg-white",
     }
 
     if (!status) {

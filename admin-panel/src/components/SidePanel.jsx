@@ -41,7 +41,7 @@ export default function SidePanel() {
                         </Link>
                         <Link
                             to="/cataloging"
-                            className={`flex flex-row h-16 items-center ${pathname === "/cataloging"
+                            className={`flex flex-row h-16 items-center ${pathname.includes("/cataloging")
                                 ? "bg-[#e6e6e6]"
                                 : "bg-white"
                                 }`}

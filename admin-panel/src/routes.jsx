@@ -140,5 +140,21 @@ export const router = createBrowserRouter([
             </ProtectedRoute>
         )
     },
+    {
+        path: "/cataloging/searching",
+        element: (
+            <ProtectedRoute>
+                <Cataloging view={2} />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/cataloging/searched",
+        element: (
+            <ProtectedRoute>
+                <Cataloging view={3} />
+            </ProtectedRoute>
+        )
+    },
 
 ]);
