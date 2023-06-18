@@ -103,10 +103,20 @@ export const findBorrowTransaction = async ({ userId, bookBarcode }) => {
     return values;
 };
 
+export const findAllBorrowTransaction = async ({ limit = 1000 }) => {
+    const conn = await mysql.createConnection(process.env.DATABASE_URL);
+    const sqlStatement =
+        "SELECT bt.id as id, user_id, first_name, middle_name, last_name, title, synopsis, author, category, status_name, status_name, bt.created_at as borrow_date, bt.due_date as due_date FROM borrow_transactions bt JOIN borrow_statuses bs ON bs.id = status JOIN users u ON u.id = user_id JOIN books b ON b.barcode = book_barcode JOIN book_categories bc ON b.category_id = bc.id ORDER BY bt.created_at DESC LIMIT ?;";
+    const inputValues = [limit];
+    const [values] = await conn.execute(sqlStatement, inputValues);
+    return values;
+};
+
 export const addBorrowTransaction = async ({
     userId,
     bookBarcode,
-    librarianId
+    librarianId,
+    dueDate
 }) => {
     const conn = await mysql.createConnection(process.env.DATABASE_URL);
     await conn.query("START TRANSACTION");
@@ -174,12 +184,12 @@ export const addBorrowTransaction = async ({
         throw Error("Book is not a borrowable category");
     }
 
-    let dueDate =
-        book.category === "Fiction"
-            ? moment().add(7, "day")
-            : moment().add(1, "day");
+    // let dueDate =
+    //     book.category === "Fiction"
+    //         ? moment().add(7, "day")
+    //         : moment().add(1, "day");
 
-    dueDate = dueDate.format("YYYY-MM-DD hh:mm:ss");
+    let dueDateStr = moment(dueDate).format("YYYY-MM-DD hh:mm:ss");
 
     await conn.query("UPDATE books SET num_copies = ? WHERE barcode = ?", [
         book.num_copies - 1,
@@ -188,7 +198,7 @@ export const addBorrowTransaction = async ({
 
     await conn.query(
         "INSERT INTO borrow_transactions(book_barcode, user_id, borrow_librarian_id, book_qty, due_date, status) VALUES (?,?,?,?,?,?)",
-        [book.barcode, user.id, librarianId, 1, dueDate, 1]
+        [book.barcode, user.id, librarianId, 1, dueDateStr, 1]
     );
     await conn.commit();
 
@@ -199,7 +209,12 @@ export const addBorrowTransaction = async ({
         [latestTransactionId]
     );
     conn.close();
-    return insertedTransactions[0];
+    return {
+        borrowTransaction: insertedTransactions[0],
+        user,
+        book,
+        librarian
+    };
 };
 
 export const returnBook = async ({ borrowTransactionId, librarianId }) => {

@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             last_name: z.string().nonempty(),
             email: z.string().email(),
             password: z.string().nonempty(),
-            role: z.number().int().min(0).max(2),
+            role: z.number().int().min(1).max(3),
             avatar_link: z.string().nullable()
         });
         try {
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
             const parsed = InputSchema.parse(req.body);
             let user = await addUser(parsed);
             if (!user) {
-                return res.status(400).end();
+                return res.status(400).json({ msg: "No User" });
             }
             const generatedToken = jwt.sign(user, process.env.JWT_SECRET, {
                 algorithm: "HS512",
@@ -30,13 +30,13 @@ export default async function handler(req, res) {
         } catch (e) {
             console.log(e);
             if (e instanceof ZodError || e instanceof SyntaxError) {
-                res.status(400).end();
+                res.status(400).json({ msg: e.message });
                 return;
             }
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }

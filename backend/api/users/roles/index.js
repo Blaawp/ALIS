@@ -8,10 +8,10 @@ export default async function handler(req, res) {
             return;
         } catch (e) {
             console.error(e);
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }

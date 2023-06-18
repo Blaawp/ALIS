@@ -4,21 +4,21 @@ import { ZodError, z } from "zod";
 export default async function handler(req, res) {
     if (req.method === "GET") {
         try {
-            const inputSchema = z.number().min(0);
+            const inputSchema = z.number().min(1);
             const parsed = inputSchema.parse(parseInt(req.query["id"]));
             const user = await findUser({ id: parsed, limit: 1 });
             res.status(200).json(user);
             return;
         } catch (e) {
             if (e instanceof ZodError) {
-                res.status(400).end();
+                res.status(400).json({ msg: e.message });
                 return;
             }
 
-            res.status(500).end();
+            res.status(500).json({ msg: e.message });
             return;
         }
     }
 
-    res.status(404).end();
+    res.status(404).json({ msg: "Not Found" });
 }
